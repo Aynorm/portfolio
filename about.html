@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="latestportfolio.css" />
+    <link rel="stylesheet" href="latestportfolio.js" />
+    <link rel="icon" type="" href="favicon aynorm.png" />
+    <style>
+      /* this is about css start */
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 700px) {
+        .intro {
+          font-size: 29px;
+        }
+
+        .mini-mobile {
+          align-items: center;
+          text-align: center;
+        }
+
+        .aboutme-container,
+        .mystory-container,
+        .past-education-container,
+        .about-experience-container {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        .about-me-years-experience-paragraph {
+          font-size: 10px;
+        }
+
+        .about-me-years-experience-span {
+          font-size: 45px !important;
+          font-weight: 900;
+        }
+
+        .skills-h2-mobile {
+          font-size: 18px;
+        }
+
+        p,
+        h2,
+        h3,
+        h1 {
+          color: white;
+        }
+
+        .my-passport {
+          max-width: 200px !important;
+        }
+      }
+
+      .second-story-img {
+        width: 100%;
+        max-width: 700px;
+        border-radius: 20px;
+      }
+      h1 {
+        font-size: 50px;
+        width: auto;
+        font-weight: 600;
+      }
+
+      h2 {
+        font-weight: 500;
+        font-size: 30px;
+        margin: 0px;
+        padding: 0px;
+      }
+
+      h3 {
+        font-weight: 700;
+        font-size: 20px;
+      }
+
+      span {
+        color: orange;
+      }
+
+      a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .h3-skills-color-fade {
+        color: gray;
+        margin-bottom: 15px;
+        margin-top: 10px;
+      }
+
+      .collab-img {
+        width: 150px;
+        margin-bottom: 30px;
+      }
+
+      .work-with-img {
+        width: 100px;
+        margin-top: 20px;
+      }
+
+      .my-passport {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 50%;
+        border: 1px solid white;
+      }
+
+      .aboutme-container,
+      .mystory-container {
+        display: flex;
+        gap: 15px;
+        padding: 30px 10px 30px 10px;
+        justify-content: space-between;
+      }
+
+      .sskills-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }
+
+      .sskills-inner {
+        gap: 105px;
+        margin-top: 10px;
+      }
+
+      .about-me-years-experience-span {
+        font-weight: 700;
+        font-size: 80px;
+      }
+      .about-me-years-exp-div {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        flex-basis: 200;
+        max-width: 200px;
+        margin-bottom: -20px;
+      }
+
+      .about-me-years-experience-paragraph {
+        margin-left: 5px;
+        font-weight: 700;
+      }
+
+      .aboutme-subcontainer,
+      .mystory-div,
+      .sskills-inner {
+        flex-grow: 1;
+        flex-basis: 200;
+        width: auto;
+      }
+
+      .mystory-div {
+        max-width: 700px;
+        width: auto;
+      }
+      .about-experience-container,
+      .past-education-container {
+        display: flex;
+        gap: 5%;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .about-experience-div,
+      .past-education-div,
+      .mini-past-education-div {
+        flex-grow: 1;
+        flex-basis: 200;
+        width: 100;
+        max-width: auto;
+      }
+
+      .about-experience-paragraph {
+        width: 100%;
+        max-width: 700px;
+      }
+
+      .about-me-gen-max-width-div {
+        max-width: 700px;
+      }
+
+      .discover-div {
+        background-color: hsl(217, 17%, 21%,0.5);
+        width: 100%;
+        max-width: 406px;
+        min-width: 280px;
+        padding: 50px 30px 50px 30px;
+        border-radius: 20px;
+      }
+
+      .discover-img {
+        width: 70px;
+      }
+
+      .discover-paragraph {
+        margin-bottom: 50px;
+      }
+      /* this is about css end */
+    </style>
+  </head>
+  <body>
+    <div id="mobileNav"></div>
+    <div class="view-top" id="navTop"></div>
+    <br />
+    <div class="aboutme-container">
+      <div class="aboutme-subcontainer" style="max-width: 700px; width: 100%">
+        <div class="white-top"></div>
+        <h1 class="intro">Nice to meet you, I’m Taleeb Ayobami</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit fames turpis
+          pretium bibendum nisl est sagittis aliquam pretium nunc curabitur
+          magna est in nulla id volutpat et venenatis at lacus.
+        </p>
+        <hr />
+        <div style="display: flex">
+          <div class="about-me-years-exp-div">
+            <p class="about-me-years-experience-span">7<span>+</span></p>
+            <p class="about-me-years-experience-paragraph">
+              Years of experience
+            </p>
+          </div>
+          <div class="about-me-years-exp-div">
+            <p class="about-me-years-experience-span">100<span>+</span></p>
+            <p class="about-me-years-experience-paragraph">
+              Successful projects
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="aboutme-subcontainer"
+        style="max-width: 700px; text-align: center"
+      >
+        <img class="my-passport" src="ay passport.jpg" alt="mypic" />
+      </div>
+    </div>
+
+    <br />
+
+    <div
+      class="mystory-container"
+      style="background-color: hsl(217, 17%, 21%,0.5); border-radius: 20px"
+    >
+      <div class="mystory-div">
+        <h3><span>/</span>MY STORY</h3>
+        <h1 class="intro">My first website design back in 2001</h1>
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+        </p>
+        <img
+          class="second-story-img"
+          src="story image.jpeg"
+          alt="story"
+        />
+      </div>
+      <div class="mystory-div">
+        <h3><span>/</span>MY STORY</h3>
+        <h1 class="intro">How I started as a web developer</h1>
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat.
+        </p>
+        <img
+          class="second-story-img"
+          src="story image1.jpeg"
+          alt="story"
+        />
+      </div>
+    </div>
+
+    <br />
+
+    <div
+      style="
+        background-color: rgba(11, 28, 54, 0.2);
+        padding: 50px 0px 50px 0px;
+      "
+    >
+      <div>
+        <h3><span>/</span>MY EXPERIENCE</h3>
+        <div
+          style="
+            display: inline-flex;
+            align-items: center;
+            flex-wrap: wrap;
+            column-gap: 20px;
+          "
+        >
+          <h1 class="intro" style="max-width: 90%">
+            Over 10 years of experience and 100+ projects
+          </h1>
+          <a href=""
+            ><p>Get in touch <span class="right-arrow"> →</span></p></a
+          >
+        </div>
+      </div>
+
+      <br />
+      <hr />
+
+      <div class="sskills-container">
+        <div class="sskills-inner">
+          <h3 class="h3-skills-color-fade">SKILL SET</h3>
+          <h2 class="skills-h2-mobile">HTML & CSS</h2>
+          <h2 class="skills-h2-mobile">Javascript</h2>
+          <h2 class="skills-h2-mobile">React JS</h2>
+        </div>
+
+        <div class="sskills-inner">
+          <h3 class="h3-skills-color-fade">AWWARDS</h3>
+          <h2 class="skills-h2-mobile">Best Website of 2022</h2>
+          <h2 class="skills-h2-mobile">AWWW Website Award</h2>
+          <h2 class="skills-h2-mobile">Innovative Developer 2019</h2>
+        </div>
+
+        <div class="sskills-inner">
+          <h3 class="h3-skills-color-fade">TOP CLIENTS</h3>
+          <h2 class="skills-h2-mobile">Venture</h2>
+          <h2 class="skills-h2-mobile">Agency</h2>
+          <h2 class="skills-h2-mobile">Studio</h2>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div
+      style="
+        background-color: hsl(217, 17%, 21%,0.5);
+        align-items: center;
+        text-align: center;
+        padding: 70px 20px 70px 20px;
+        border-radius: 28px;
+      "
+    >
+      <h3><span>/</span>MY PAST CLIENTS</h3>
+      <div>
+        <h1 class="intro">Brand & companies I have collaborated with</h1>
+      </div>
+      <div style="margin-top: 20px">
+        <img class="collab-img" src="organization.svg" alt="collab" />
+        <img class="collab-img" src="studio.svg" alt="collab" />
+        <img class="collab-img" src="enterprise.svg" alt="collab" />
+        <img class="collab-img" src="company.svg" alt="collab" />
+        <img class="collab-img" src="business.svg" alt="collab" />
+      </div>
+      <a href="#">Get in touch <span class="right-arrow"> →</span></a>
+    </div>
+
+    <br />
+
+    <div
+      style="
+        background-color: rgba(11, 28, 54, 0.2);
+        padding: 50px 0px 50px 0px;
+      "
+    >
+      <h3><span>/</span>MY EXPERIENCE</h3>
+      <div
+        style="
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        <h1 class="intro">I’ve worked with some amazing companies</h1>
+        <a href="">Get in touch<span class="right-arrow"> →</span></a>
+      </div>
+      <hr />
+      <div class="about-experience-container">
+        <div class="about-experience-div">
+          <img
+            class="work-with-img"
+            src="agency.svg"
+            alt="client logo"
+          />
+        </div>
+        <div class="about-experience-div">
+          <h2>Head of Engineering at Venture</h2>
+          <p
+            class="about-experience-paragrap"
+            style="width: 100%; max-width: 700px"
+          >
+            Lorem ipsum dolor sit amet consectet adipiscing elit et et est eget
+            tortor lacus aliquam pulvinar senectus ut sapien sed nun
+          </p>
+        </div>
+        <div class="about-experience-div">
+          <p>JAN 2019 <span>/</span> PRESENT</p>
+        </div>
+      </div>
+      <hr />
+      <div class="about-experience-container">
+        <div class="about-experience-div">
+          <img
+            class="work-with-img"
+            src="venture.svg"
+            alt="client logo"
+          />
+        </div>
+        <div class="about-experience-div">
+          <h2>Head of Engineering at Venture</h2>
+          <p class="about-experience-paragraph">
+            Lorem ipsum dolor sit amet consectet adipiscing elit et et est eget
+            tortor lacus aliquam pulvinar senectus ut sapien sed nun
+          </p>
+        </div>
+        <div class="about-experience-div">
+          <p>JAN 2019 <span>/</span> PRESENT</p>
+        </div>
+      </div>
+      <hr />
+      <div class="about-experience-container">
+        <div class="about-experience-div">
+          <img
+            class="work-with-img"
+            src="studio.svg"
+            alt="client logo"
+          />
+        </div>
+        <div class="about-experience-div">
+          <h2>Head of Engineering at Venture</h2>
+          <p class="about-experience-paragraph">
+            Lorem ipsum dolor sit amet consectet adipiscing elit et et est eget
+            tortor lacus aliquam pulvinar senectus ut sapien sed nun
+          </p>
+        </div>
+        <div class="about-experience-div">
+          <p>JAN 2019 <span>/</span> PRESENT</p>
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <div style="background-color: transparent; padding: 50px 0px 50px 0px">
+      <div class="past-education-container">
+        <div class="past-education-div" style="max-width: 500px">
+          <h3><span>/</span>MY EXPERIENCE</h3>
+          <h1 class="intro">Past education & credentials</h1>
+        </div>
+        <div class="past-education-div" style="max-width: 500px">
+          <p>
+            Lorem ipsum dolor sit amet consectet adipiscing elit et et est eget
+            tortor lacus aliquam pulvinar senectus ut sapien sed nun
+          </p>
+        </div>
+      </div>
+      <hr />
+
+      <div class="past-education-container">
+        <div class="mini-past-education-div about-me-gen-max-width-div">
+          <h3>STANFORD UNIVERSITY <span>/</span> JAN 2016</h3>
+          <h1 class="intro">Frontend Web Developer Degree</h1>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+            dolore eu fugiat nulla pariatur sint occaecat dolor.
+          </p>
+        </div>
+
+        <div class="mini-past-education-div about-me-gen-max-width-div">
+          <h3>STANFORD UNIVERSITY <span>/</span> JAN 2016</h3>
+          <h1 class="intro">Frontend Web Developer Degree</h1>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+            dolore eu fugiat nulla pariatur sint occaecat dolor.
+          </p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="past-education-container">
+        <div class="mini-past-education-div about-me-gen-max-width-div">
+          <h3>STANFORD UNIVERSITY <span>/</span> JAN 2016</h3>
+          <h1 class="intro">Frontend Web Developer Degree</h1>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+            dolore eu fugiat nulla pariatur sint occaecat dolor.
+          </p>
+        </div>
+
+        <div class="mini-past-education-div about-me-gen-max-width-div">
+          <h3>STANFORD UNIVERSITY <span>/</span> JAN 2016</h3>
+          <h1 class="intro">Frontend Web Developer Degree</h1>
+          <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cill
+            dolore eu fugiat nulla pariatur sint occaecat dolor.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br />
+
+    <div
+      class="discover-general"
+      style="
+        background-color: rgba(11, 28, 54, 0.2);
+        padding: 50px 0px 50px 0px;
+      "
+    >
+      <h3><span>/</span>MY TOOLS</h3>
+      <h1 class="intro">Discover what tools I use for work</h1>
+      <div style="display: flex; gap: 20px; overflow: auto">
+        <div class="discover-div">
+          <a href="#">
+            <img class="tools-image" src="github.png" alt="tools" />
+            <h2>Github</h2>
+            <p class="discover-paragraph">
+              GitHub is a developer platform that allows developers to create,
+              store, manage and share their code.
+            </p>
+            <p class="view-snippet">
+              Download now <span class="right-arrow"> →</span>
+            </p></a
+          >
+        </div>
+
+        <div class="discover-div">
+          <a href="#">
+            <img
+              class="tools-image"
+              src="Visual_Studio_Code_1.35_icon.png"
+              alt="tools"
+            />
+            <h2>VS Code</h2>
+            <p class="discover-paragraph">
+              Visual Studio Code, also commonly referred to as VS Code, is a
+              source-code editor developed by Microsoft for Windows, Linux,
+              macOS and web browsers.
+            </p>
+            <p class="view-snippet">
+              Download now <span class="right-arrow"> →</span>
+            </p></a
+          >
+        </div>
+
+        <div class="discover-div">
+          <a href="#">
+            <img
+              class="tools-image"
+              src="Adobe_Illustrator_CC_icon.svg.png"
+              alt="tools"
+            />
+            <h2>Adobe Illustrator</h2>
+            <p class="discover-paragraph">
+              Adobe Illustrator is a vector graphics editor and design software
+              developed and marketed by Adobe.
+            </p>
+            <p class="view-snippet">
+              Download now <span class="right-arrow"> →</span>
+            </p></a
+          >
+        </div>
+
+        <div class="discover-div">
+          <a href="#">
+            <img
+              class="tools-image"
+              src="Photoshop_CC_icon.png"
+              alt="tools"
+            />
+            <h2>Photoshop</h2>
+            <p class="discover-paragraph">
+              Adobe Photoshop is a raster graphics editor developed and
+              published by Adobe for Windows and macOS.
+            </p>
+            <p class="view-snippet">
+              Download now <span class="right-arrow"> →</span>
+            </p></a
+          >
+        </div>
+
+        <div class="discover-div">
+          <a href="#">
+            <img
+              class="tools-image"
+              src="Lightroom_CC_logo.png"
+              alt="tools"
+            />
+            <h2>Lightroom</h2>
+            <p class="discover-paragraph">
+              Adobe Photoshop Lightroom, usually called Lightroom, is an image
+              organization and processing application developed by Adobe
+            </p>
+            <p class="view-snippet">
+              Download now <span class="right-arrow"> →</span>
+            </p></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <hr />
+<div id="bottomNav"></div>
+<script type="module" src="latestportfoliooption.js"></script>
+  </body>
+</html>
