@@ -1,14 +1,5 @@
 @media only screen and (max-width: 400px) {
 
-  /* .my-pic {
-        text-align: center;
-        align-items: center;
-      } */
-
-      .ceo-name {
-        font-size: 30px !important;
-      }
-
       .padding-h1-in-contact {
         padding: 10px 0px 10px 0px;
 
@@ -22,6 +13,14 @@
 @media only screen and (max-width: 700px) {
   .mobilenav-top {
     display: grid !important;
+  }
+
+  .ceo-name {
+  font-size: 29px !important;
+  }
+
+  .ceo-img {
+    margin: auto;
   }
 
   .mobile-logo-div {
@@ -50,8 +49,7 @@
     font-size: 12px ;
   }
   .mini-mobile {
-    align-items: center;
-    text-align: center;
+    text-align: center !important;
   }
 
   .mobile {
@@ -557,10 +555,8 @@ img {
 }
 
 .my-pic {
-  width: 25%;
-  max-width: 150px;
-  min-width: 50px;
-  min-height: 50px;
+  width: 100%;
+  max-width: 100%;
   border-radius: 50%;
   background-color: white;
   padding: 1px;
@@ -569,12 +565,12 @@ img {
 .get-in-touch-container {
   display: flex;
   column-gap: 20px;
+  align-items: center !important;
   
 }
 
 .get-in-touch {
   flex-grow: 1;
-  flex-basis: 200;
 }
 
 .glass-background {
@@ -583,7 +579,7 @@ img {
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px); 
-  padding: 28px;
+  padding: 10px;
 }
 
 .last-content {

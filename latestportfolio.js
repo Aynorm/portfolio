@@ -24,7 +24,7 @@
 export const mobileNav = 
 "<div class='mobilenav-top top-glass-background'>\
 <div class='mobile-logo-div'><img class='logo-img' src='aynorm freelance.png' alt='Logo'> <p class='name-logo'>ynorm</p></div>\
-<div class='hire-me-div'> <a href=''> <img class='logo-img' src='hire me btn.png' alt='hire me'></a> </div>\
+<div class='hire-me-div'> <a href='https://aynorm.github.io/portfolio/hire me'> <img class='logo-img' src='hire me btn.png' alt='hire me'></a> </div>\
 </div>"
 
 document.getElementById("mobileNav").innerHTML = mobileNav;
@@ -32,8 +32,8 @@ document.getElementById("mobileNav").innerHTML = mobileNav;
 export const navTop =
 "<div class='first-top top-glass-background' >\
 <div class='image-div'><img class='logo-img' src='aynorm freelance.png' alt='Logo'> <p class='name-logo'>ynorm</p></div>\
-<div class='group-div'><ul class='top-ul'><li class='top-li'><a href=''>Home</a></li><li class='top-li'><a href=''>About</a></li><li class='top-li'><a href=''>Portfolio</a></li><li class='top-li'><a href=''>Contact</a></li><li class='top-li'><a href=''>Hire Me</a></li></ul></div>\
-<div class='hire-me-div'> <a href=''> <img class='logo-img' src='hire me btn.png' alt='hire me'></a> </div>\
+<div class='group-div'><ul class='top-ul'><li class='top-li'><a href='https://aynorm.github.io/portfolio/latestportfolio.html'>Home</a></li><li class='top-li'><a href='https://aynorm.github.io/portfolio/about'>About</a></li><li class='top-li'><a href='https://aynorm.github.io/portfolio/portfolio'>Portfolio</a></li><li class='top-li'><a href='https://aynorm.github.io/portfolio/contact'>Contact</a></li><li class='top-li'><a href='https://aynorm.github.io/portfolio/hire me'>Hire Me</a></li></ul></div>\
+<div class='hire-me-div'> <a href='https://aynorm.github.io/portfolio/hire me'> <img class='logo-img' src='hire me btn.png' alt='hire me'></a> </div>\
 </div>\
 "
 
@@ -42,11 +42,11 @@ document.getElementById("navTop").innerHTML = navTop;
 export const bottomNav =
   "<div class='mobile top-glass-background'>\
   <ul class='ul-bottom'>\
-  <li class='bottom-btn'> <a href=''> <img class='bottom-img' src='home btn.png' alt='home'> </a> </li>\
-  <li class='bottom-btn'> <a href=''> <img class='bottom-img' src='about btn.png' alt='about'> </a> </li>\
-  <li class='bottom-btn'> <a href=''> <img class='bottom-img' src='portfolio btn.png' alt='portfolio'> </a> </li>\
-  <li class='bottom-btn'> <a href=''> <img class='bottom-img' src='blog btn.png' alt='blog'> </a> </li>\
-  <li class='bottom-btn'> <a href=''> <img class='bottom-img' src='services btn.png' alt='services'> </a> </li>\
+  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/latestportfolio.html'> <img class='bottom-img' src='home btn.png' alt='home'> </a> </li>\
+  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/about'> <img class='bottom-img' src='about btn.png' alt='about'> </a> </li>\
+  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/portfolio'> <img class='bottom-img' src='portfolio btn.png' alt='portfolio'> </a> </li>\
+  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/contact'> <img class='bottom-img' src='blog btn.png' alt='blog'> </a> </li>\
+  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/hire me'> <img class='bottom-img' src='services btn.png' alt='services'> </a> </li>\
   </ul>\
   </div>\
 "
