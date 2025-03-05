@@ -13,6 +13,19 @@
 @media only screen and (max-width: 700px) {
   .mobilenav-top {
     display: grid !important;
+    background: transparent !important;
+  }
+
+  .p-bottom {
+
+    font-weight: 500;
+    font-size: 60%;
+    margin-top: 0px;
+    margin-bottom: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0px;
+    text-align:justify;
   }
 
   .ceo-name {
@@ -126,6 +139,10 @@
         .body-exp-bootomnav {
           margin-bottom: 100px !important;
         }
+
+        .bottom-btn {
+          align-items: center;
+        }
 }
 /* End of mobile view */
 .mobilenav-top {
@@ -197,6 +214,10 @@
 .bottom-img {
   max-width: 10px;
   min-width: 40px;
+  border: 1px solid hsl(0, 0%, 100%,0.5);
+  border-radius: 10px;
+  background-color: hsl(0, 0%, 100%,0.3);
+
 }
 
 .top-glass-background {
@@ -204,7 +225,8 @@
   border-radius: 0px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(5px); 
-  padding: 5px 2px 5px 2px;
+  padding: 0px;
+  /* padding: 5px 2px 5px 2px; */
 }
 
 
