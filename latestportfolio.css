@@ -1,7 +1,7 @@
 @media only screen and (max-width: 400px) {
 
       .padding-h1-in-contact {
-        padding: 10px 0px 10px 0px;
+        padding: 0px 0px 0px 0px;
 
       .paragraph-portfolio {
           width: 120px;
@@ -16,6 +16,10 @@
     background: transparent !important;
   }
 
+  .top-glass-background {
+    background-color: white !important;
+  }
+
   .p-bottom {
 
     font-weight: 500;
@@ -26,6 +30,7 @@
     margin-right: 0px;
     padding: 0px;
     text-align:justify;
+    color:black !important;
   }
 
   .ceo-name {
@@ -53,7 +58,7 @@
   }
 
   .mobile-about {
-    display: grid !important;
+    display: flex !important;
     margin: 0% !important;
     padding: 0% !important;
 }
@@ -68,7 +73,7 @@
   .mobile {
     display: grid !important;
     position: fixed !important;
-    bottom: 10px !important;
+    bottom: -10px !important;
     width: 100% !important;
     margin-left: -8px !important;
   }
@@ -106,6 +111,7 @@
   .about-me-years-exp-div {
     padding: -400px !important;
     margin: -50px 0px -50px 0px !important;
+    /* display: flex !important; */
   }
 
   .about-me-years-experience-span {
@@ -123,7 +129,8 @@
     }
 
     .padding-h1-in-contact {
-      padding: 20px 0px 20px 0px;
+      padding: 0px 0px 0px 0px;
+      color: gray !important;
     }
 
   .h2-portfolio {font-size: 20px;}
@@ -170,11 +177,15 @@
 }
 .logo-img {
   width: 30px;
+  background-color: orange;
+  border-radius: 50px;
+  padding: 4px;
 }
 
 .name-logo {
   font-weight: 900;
   font-size: x-large;
+  color: black;
 }
 .first-top {
   display: grid;
@@ -193,16 +204,22 @@
 
 .top-ul {
   display: flex;
+
 }
 
 .top-li {
   padding: 10px 18px;
   font-weight: 500;
+  color: black !important;
 }
 
 .top-li:hover {
   font-size: 25px;
   font-weight: 500;
+}
+
+.a-color-alt {
+  color: black !important;
 }
 
 .ul-bottom {
@@ -221,7 +238,7 @@
 }
 
 .top-glass-background {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(250, 248, 248);
   border-radius: 0px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(5px); 
@@ -336,7 +353,7 @@ p {
            display: flex;
            width: 100%;
            column-gap: 50px;
-           padding: 50px 0px 50px 0px;
+           padding: 0px 0px 0px 0px;
            justify-content:space-evenly;
          }
     
@@ -525,12 +542,12 @@ h2 {
   margin-bottom:5px;
 }
 
-h3 {
+/* h3 {
   font-size: 20px;
   padding:0px;
 margin-top:5px;
 margin-bottom:5px;
-}
+} */
 
 div {
   margin-top:5px;
