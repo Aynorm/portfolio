@@ -44,7 +44,7 @@
         width: 500px;
         flex-grow: 1;
         flex-basis: 200;
-        background-color: hsl(217, 17%, 21%,0.2);
+        background-color: hsl(217, 17%, 21%, 0.2);
         border-radius: 20px;
         padding-top: 30px;
       }
@@ -64,12 +64,185 @@
     <div id="mobileNav"></div>
     <div class="view-top" id="navTop"></div>
 
+    <!-- DIGITAL CLOCK PROGRAM -->
+    <style>
+      #clock-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid orange;
+        border-radius: 10px;
+      }
+      #clock {
+        font-family: monospace;
+        font-size: 5.5rem;
+        font-weight: bold;
+        text-align: center;
+        backdrop-filter: blur(5px);
+        background-color: hsla(7, 60%, 35%, 0.295);
+        width: 100%;
+        color: white;
+      }
+    </style>
+    <h1 style="text-align: center">DIGITAL CLOCK</h1>
+    <div id="clock-container">
+      <div id="clock">00:00:00</div>
+    </div>
+    <script>
+      function updateClock() {
+        const now = new Date();
+        let hours = now.getHours();
+        const meridiem = hours >= 12 ? "PM" : "AM";
+        hours = hours % 12 || 12;
+        hours = hours.toString().padStart(2, 0);
+        const minutes = now.getMinutes().toString().padStart(2, 0);
+        const seconds = now.getSeconds().toString().padStart(2, 0);
+        const timeString = `${hours}:${minutes}:${seconds} ${meridiem}`;
+        document.getElementById("clock").textContent = timeString;
+      }
+
+      updateClock();
+      setInterval(updateClock, 1000);
+    </script>
+
+    <!-- STOPWATCH -->
+    <style>
+      #stopwatchBody {
+        background-color: hsla(39, 100%, 50%, 0.301);
+        border-radius: 20px;
+        padding: 0px 0px 10px 10px;
+      }
+
+      #myH1 {
+        font-size: 4rem;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        text-align: center;
+      }
+
+      #container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        border: 5px solid;
+        border-radius: 50px;
+        background-color: white;
+      }
+
+      #display {
+        font-size: 5rem;
+        font-family: monospace;
+        font-weight: bold;
+        color: gray;
+        text-shadow: 2px 2px 2px black;
+      }
+
+      #controls,
+      .ssrBtn {
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 10px 20px;
+        margin: 5px;
+        min-width: 125px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        color: white;
+        transition: background-color 0.5s ease;
+      }
+
+      #startBtn {
+        background-color: green;
+      }
+      #startBtn:hover {
+        background-color: greenyellow;
+      }
+
+      #stopBtn {
+        background-color: red;
+      }
+      #stopBtn:hover {
+        background-color: lightcoral;
+      }
+
+      #resetBtn {
+        background-color: blue;
+      }
+      #resetBtn:hover {
+        background-color: lightblue;
+      }
+    </style>
+    <div id="stopwatchBody">
+      <h1 id="myH1">Stopwatch</h1>
+      <div id="container">
+        <div id="display">00:00:00:00</div>
+        <div id="controls">
+          <button class="ssrBtn" id="startBtn" onclick="start()">Start</button>
+          <button class="ssrBtn" id="stopBtn" onclick="stop()">Stop</button>
+          <button class="ssrBtn" id="resetBtn" onclick="reset()">Reset</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      const display = document.getElementById("display");
+      let timer = null;
+      let startTime = 0;
+      let elapsedTime = 0;
+      let isRunning = false;
+
+      function start() {
+        if (!isRunning) {
+          startTime = Date.now() - elapsedTime;
+          timer = setInterval(update, 10);
+          isRunning = true;
+        }
+      }
+      function stop() {
+        if (isRunning) {
+          clearInterval(timer);
+          elapsedTime = Date.now() - startTime;
+          isRunning = false;
+        }
+      }
+
+      function reset() {
+        clearInterval(timer);
+        startTime = 0;
+        elapsedTime = 0;
+        isRunning = false;
+        display.textContent = "00:00:00:00";
+      }
+
+      function update() {
+        const currentTime = Date.now();
+        elapsedTime = currentTime - startTime;
+
+        let hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+        let minutes = Math.floor(elapsedTime / (1000 * 60)) % 60;
+        let seconds = Math.floor((elapsedTime / 1000) % 60);
+        let milliseconds = Math.floor((elapsedTime % 1000) / 10);
+
+        hours = String(hours).padStart(2, "0");
+        minutes = String(minutes).padStart(2, "0");
+        seconds = String(seconds).padStart(2, "0");
+        milliseconds = String(milliseconds).padStart(2, "0");
+
+        display.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+      }
+    </script>
+
     <div style="background-color: rgba(11, 28, 54, 0.2)">
       <div class="center-word-portfolio">
         <div class="mid-word-center">
           <h1>Portfolio</h1>
           <p>
-            As a skilled front-end developer, I builds websites that are responsive, user-centric, and provide an impressive experience, delivering optimal performance across every device. With a focus on user-friendly design and seamless functionality, I builds your digital dreams, creating websites that engage, inform, and inspire your audience. 
+            As a skilled front-end developer, I builds websites that are
+            responsive, user-centric, and provide an impressive experience,
+            delivering optimal performance across every device. With a focus on
+            user-friendly design and seamless functionality, I builds your
+            digital dreams, creating websites that engage, inform, and inspire
+            your audience.
           </p>
         </div>
       </div>
@@ -82,18 +255,10 @@
             <button>Illustrator</button>
             <button>Graphic Design</button>
           </div>
-          <img
-            class="dex-logo-img"
-            src="dex logo.png"
-            alt="portforlio works"
-          />
+          <img class="dex-logo-img" src="dex logo.png" alt="portforlio works" />
           <h1 class="h2-portfolio">Cripsy</h1>
           <h2 class="h2-portfolio">Company Flyer</h2>
-          <img
-            class="real-work-img"
-            src="cripsy.jpg"
-            alt="Real work"
-          />
+          <img class="real-work-img" src="cripsy.jpg" alt="Real work" />
         </div>
 
         <div class="items">
@@ -101,11 +266,7 @@
             <button>React JS</button>
             <button>Web Development</button>
           </div>
-          <img
-            class="dex-logo-img"
-            src="dex logo.png"
-            alt="portforlio works"
-          />
+          <img class="dex-logo-img" src="dex logo.png" alt="portforlio works" />
           <h1 class="h2-portfolio">Voting Website</h1>
           <h2 class="h2-portfolio">Development for Raueeatte</h2>
           <img
@@ -120,18 +281,10 @@
             <button>React JS</button>
             <button>Web Development</button>
           </div>
-          <img
-            class="dex-logo-img"
-            src="dex logo.png"
-            alt="portforlio works"
-          />
+          <img class="dex-logo-img" src="dex logo.png" alt="portforlio works" />
           <h1 class="h2-portfolio">Crypto Website</h1>
           <h2 class="h2-portfolio">Development for DeFi X</h2>
-          <img
-            class="real-work-img"
-            src="wallpaper.webp"
-            alt="Real work"
-          />
+          <img class="real-work-img" src="wallpaper.webp" alt="Real work" />
         </div>
 
         <div class="items">
@@ -139,18 +292,10 @@
             <button>PhotoShop</button>
             <button>Photography</button>
           </div>
-          <img
-            class="dex-logo-img"
-            src="dex logo.png"
-            alt="portforlio works"
-          />
+          <img class="dex-logo-img" src="dex logo.png" alt="portforlio works" />
           <h1 class="h2-portfolio">Studio Shot</h1>
           <h2 class="h2-portfolio">Wedding Potrate</h2>
-          <img
-            class="real-work-img"
-            src="16x20 copy.jpg"
-            alt="Real work"
-          />
+          <img class="real-work-img" src="16x20 copy.jpg" alt="Real work" />
         </div>
       </div>
     </div>
