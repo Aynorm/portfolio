@@ -66,11 +66,21 @@
 
     <!-- DIGITAL CLOCK PROGRAM -->
     <style>
+      @media only screen and (max-width: 700px) {
+        #clock {
+          font-size: 2rem !important;
+        }
+
+        .digital-clock {
+          font-size: 2rem;
+        }
+      }
+
       #clock-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        border: 3px solid orange;
+        border: 2px solid orange;
         border-radius: 10px;
       }
       #clock {
@@ -84,7 +94,7 @@
         color: white;
       }
     </style>
-    <h1 style="text-align: center">DIGITAL CLOCK</h1>
+    <h1 class="digital-clock" style="text-align: center">DIGITAL CLOCK</h1>
     <div id="clock-container">
       <div id="clock">00:00:00</div>
     </div>
@@ -107,6 +117,35 @@
 
     <!-- STOPWATCH -->
     <style>
+      @media only screen and (max-width: 700px) {
+        #display {
+          font-size: 2rem !important;
+        }
+
+        #myH1 {
+          font-size: 2rem !important;
+        }
+
+        #controls {
+          display: grid !important;
+          grid-template-columns: 1fr 1fr 1fr !important;
+          align-items: center !important;
+          text-align: center !important;
+          column-gap: 10px !important;
+        }
+
+        .ssrBtn {
+          font-size: 0.6rem !important;
+          padding: 12px 6px !important;
+          margin: 3px !important;
+          display: fle !important;
+          min-width: 100% !important;
+          border-radius: 10px !important;
+          align-items: center !important;
+          text-align: center !important;
+        }
+      }
+
       #stopwatchBody {
         background-color: hsla(39, 100%, 50%, 0.301);
         border-radius: 20px;
@@ -127,7 +166,7 @@
         padding: 30px;
         border: 5px solid;
         border-radius: 50px;
-        background-color: white;
+        background-color: hsla(0, 0%, 100%, 0.884);
       }
 
       #display {
@@ -174,7 +213,7 @@
       }
     </style>
     <div id="stopwatchBody">
-      <h1 id="myH1">Stopwatch</h1>
+      <h1 id="myH1">STOPWATCH</h1>
       <div id="container">
         <div id="display">00:00:00:00</div>
         <div id="controls">
