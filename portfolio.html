@@ -63,6 +63,17 @@
   <body>
     <div id="mobileNav"></div>
     <div class="view-top" id="navTop"></div>
+    <div class="mid-word-center">
+      <h1>Portfolio</h1>
+      <p>
+        As a skilled front-end developer, I builds websites that are responsive,
+        user-centric, and provide an impressive experience, delivering optimal
+        performance across every device. With a focus on user-friendly design
+        and seamless functionality, I builds your digital dreams, creating
+        websites that engage, inform, and inspire your audience.
+      </p>
+    </div>
+    <hr />
 
     <!-- DIGITAL CLOCK PROGRAM -->
     <style>
@@ -114,6 +125,9 @@
       updateClock();
       setInterval(updateClock, 1000);
     </script>
+    <br />
+    <hr />
+    <br />
 
     <!-- STOPWATCH -->
     <style>
@@ -270,6 +284,156 @@
         display.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
       }
     </script>
+    <br />
+    <hr />
+    <br />
+
+    <!-- Calculator -->
+    <style>
+      @media only screen and (max-width: 700px) {
+        #calculator {
+          max-width: 400px !important;
+        }
+
+        #calculatorDisplay {
+          font-size: 1.5rem !important;
+        }
+
+        .c-Btn {
+          font-size: 1.5rem !important;
+          padding: 1px !important;
+          width: 60px !important;
+          height: 60px !important;
+        }
+
+        #keys {
+          padding: 0px !important;
+          gap: 2px !important;
+        }
+
+        .calculator-c {
+          font-size: 2rem !important;
+        }
+      }
+      .calculator-body {
+        border-radius: 12px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: hsla(0, 0%, 100%, 0.418);
+      }
+      #calculator {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: hsla(0, 0%, 0%, 0.829);
+        border-radius: 15px;
+        max-width: 500px;
+        overflow: hidden;
+      }
+
+      #calculatorDisplay {
+        width: 100%;
+        padding: 20px;
+        font-size: 5rem;
+        text-align: left;
+        border: none;
+        background-color: hsla(0, 0%, 0%, 0.418);
+        color: white;
+      }
+
+      #keys {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        padding: 25px;
+      }
+
+      .c-Btn {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        border: none;
+        background-color: hsla(0, 0%, 0%, 0.637);
+        color: white;
+        font-size: 3rem;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      .c-Btn:hover {
+        background-color: gray;
+      }
+
+      .c-Btn:active {
+        background-color: gainsboro;
+      }
+
+      .operator-btn {
+        background-color: orange;
+      }
+      .operator-btn:hover {
+        background-color: orangered;
+      }
+      .operator-btn:active {
+        background-color: olivedrab;
+      }
+    </style>
+    <h1 class="calculator-c" style="text-align: center">CALCULATOR</h1>
+    <div class="calculator-body">
+      <div id="calculator">
+        <input id="calculatorDisplay" readonly />
+        <div id="keys">
+          <button class="c-Btn operator-btn" onclick="appendToDisplay('+')">
+            +
+          </button>
+          <button class="c-Btn" onclick="appendToDisplay('7')">7</button>
+          <button class="c-Btn" onclick="appendToDisplay('8')">8</button>
+          <button class="c-Btn" onclick="appendToDisplay('9')">9</button>
+          <button class="c-Btn operator-btn" onclick="appendToDisplay('-')">
+            -
+          </button>
+          <button class="c-Btn" onclick="appendToDisplay('4')">4</button>
+          <button class="c-Btn" onclick="appendToDisplay('5')">5</button>
+          <button class="c-Btn" onclick="appendToDisplay('6')">6</button>
+          <button class="c-Btn operator-btn" onclick="appendToDisplay('*')">
+            *
+          </button>
+          <button class="c-Btn" onclick="appendToDisplay('1')">1</button>
+          <button class="c-Btn" onclick="appendToDisplay('2')">2</button>
+          <button class="c-Btn" onclick="appendToDisplay('3')">3</button>
+          <button class="c-Btn operator-btn" onclick="appendToDisplay('/')">
+            /
+          </button>
+          <button class="c-Btn" onclick="appendToDisplay('0')">0</button>
+          <button class="c-Btn" onclick="appendToDisplay('.')">.</button>
+          <button class="c-Btn" onclick="calculate()">=</button>
+          <button class="c-Btn operator-btn" onclick="clearDisplay()">C</button>
+        </div>
+      </div>
+
+      <script>
+        const calculatorDisplay = document.getElementById("calculatorDisplay");
+
+        function appendToDisplay(input) {
+          calculatorDisplay.value += input;
+        }
+
+        function clearDisplay() {
+          calculatorDisplay.value = "";
+        }
+
+        function calculate() {
+          try {
+            calculatorDisplay.value = eval(calculatorDisplay.value);
+          } catch (error) {
+            calculatorDisplay.value = "Error";
+          }
+        }
+      </script>
+    </div>
+    <br />
+    <hr />
+    <br />
 
     <div style="background-color: rgba(11, 28, 54, 0.2)">
       <div class="center-word-portfolio">
