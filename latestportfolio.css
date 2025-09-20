@@ -16,7 +16,13 @@
   }
 
   .top-glass-background {
-    background-color: white !important;
+    background: hsl(0, 0%, 90%) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 1px 1px orange !important;
+    backdrop-filter: blur(50px) !important;
+    padding: 0px !important;
+    padding: 0px 0px 0px 0px !important;
+    height: 56px !important;
   }
 
   .p-bottom {
@@ -29,6 +35,12 @@
     padding: 0px;
     text-align: justify;
     color: black !important;
+  }
+
+  .name-logo {
+    font-weight: 900;
+    font-size: medium !important;
+    color: black;
   }
 
   .ceo-name {
@@ -45,6 +57,8 @@
 
   .hire-me-div {
     margin-right: 10px;
+    margin-top: -2px !important;
+    padding: 5px !important;
   }
 
   .view-top {
@@ -66,12 +80,15 @@
   }
   .mini-mobile {
     text-align: center !important;
+    display: flex !important;
+    flex-wrap: none !important;
+    align-items: center !important;
   }
 
   .mobile {
     display: grid !important;
     position: fixed !important;
-    bottom: -10px !important;
+    bottom: -2px !important;
     width: 100% !important;
     margin-left: -8px !important;
   }
@@ -171,9 +188,10 @@
   border-radius: 10px;
   padding: 10px;
   margin-right: 10px;
+  margin-top: -11px;
 }
 .logo-img {
-  width: 30px;
+  max-width: 30px;
   background-color: orange;
   border-radius: 50px;
   padding: 4px;
@@ -193,10 +211,12 @@
   display: flex;
   align-items: center;
   margin-left: 10px;
+  margin-top: -11px;
 }
 
 .group-div {
   display: flex;
+  margin-top: -20px;
 }
 
 .top-ul {
@@ -219,26 +239,27 @@
 }
 
 .ul-bottom {
-  margin-left: -25px !important;
+  margin: 0px !important;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 .bottom-img {
-  max-width: 10px;
-  min-width: 40px;
-  border: 1px solid hsla(0, 0%, 100%, 0.5);
+  max-width: 40px;
+  min-width: 30px;
+  /* border: 1px solid hsla(0, 0%, 100%, 0.5); */
   border-radius: 10px;
-  background-color: hsl(0, 0%, 100%, 0.3);
+  /* background-color: hsl(0, 0%, 100%, 0.3); */
 }
 
 .top-glass-background {
-  background: hsl(0, 0%, 100%);
+  background: hsl(0, 0%, 90%);
   border-radius: 10px;
-  /* box-shadow: 0 4px 16px hsla(0, 8%, 95%); */
+  box-shadow: 0 1px 1px orange;
   backdrop-filter: blur(50px);
   padding: 0px;
-  /* padding: 5px 2px 5px 2px; */
+  padding: 0px 0px 0px 0px;
+  height: 56px;
 }
 
 /* width */
@@ -313,7 +334,7 @@
 }
 
 body {
-  background-color: black;
+  background-color: #11181c;
   color: white;
   font-family: Spacegrotesk, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue";
@@ -606,7 +627,7 @@ img {
 .glass-background {
   background-color: hsla(0, 0%, 100%, 0.05);
   /* background-color: whitesmoke; */
-  border-radius: 1px;
+  border-radius: 10px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   padding: 10px;
@@ -747,10 +768,10 @@ img {
 
 /* Background changer */
 
-body {
+/* body {
   background: black;
   color: white;
-}
+} */
 
 .dark-mode {
   background: linear-gradient(320deg, #eeeded, #857678, #ffffff);
