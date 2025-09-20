@@ -44,7 +44,7 @@
   }
 
   .ceo-name {
-    font-size: 29px !important;
+    font-size: 120% !important;
   }
 
   .ceo-img {
@@ -242,10 +242,11 @@
   margin: 0px !important;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  margin-left: -10px !important;
 }
 
 .bottom-img {
-  max-width: 40px;
+  max-width: 30px;
   min-width: 30px;
   /* border: 1px solid hsla(0, 0%, 100%, 0.5); */
   border-radius: 10px;
