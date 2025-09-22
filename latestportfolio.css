@@ -251,6 +251,7 @@
   /* border: 1px solid hsla(0, 0%, 100%, 0.5); */
   border-radius: 10px;
   /* background-color: hsl(0, 0%, 100%, 0.3); */
+  opacity: 70%;
 }
 
 .top-glass-background {
