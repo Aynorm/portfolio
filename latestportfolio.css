@@ -93,6 +93,16 @@
     margin-left: -8px !important;
   }
 
+  .mycv-mobile {
+    display: block !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .mycv-desktop {
+    display: none !important;
+  }
+
   .container-port,
   .me-container,
   .general-snippet {
