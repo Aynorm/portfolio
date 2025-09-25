@@ -20,7 +20,6 @@
 // }
 //Nav js
 
-
 export const mobileNav = 
 "<div class='mobilenav-top top-glass-background'>\
 <div class='mobile-logo-div'><img class='logo-img' src='aynorm freelance.png' alt='Logo'> <p class='name-logo'>ynorm</p></div>\
