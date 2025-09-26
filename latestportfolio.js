@@ -1,12 +1,11 @@
 //Background changer
-    
-    
-      // function myFunction() {
-      //   var element = document.body;
-      //   element.classList.toggle("dark-mode");
-      // }
-    
-    //Background changer
+
+// function myFunction() {
+//   var element = document.body;
+//   element.classList.toggle("dark-mode");
+// }
+
+//Background changer
 
 //Nav js
 // function openNav() {
@@ -20,22 +19,22 @@
 // }
 //Nav js
 
-export const mobileNav = 
-"<div class='mobilenav-top top-glass-background'>\
+export const mobileNav =
+  "<div class='mobilenav-top top-glass-background'>\
 <div class='mobile-logo-div'><img class='logo-img' src='aynorm freelance.png' alt='Logo'> <p class='name-logo'>ynorm</p></div>\
 <div class='hire-me-div'> <a href='https://aynorm.github.io/portfolio/hire-me'> <img class='logo-img' src='hire me btn.png' alt='hire-me'></a> </div>\
 </div>\
-<hr>"
+<hr>";
 
 document.getElementById("mobileNav").innerHTML = mobileNav;
 
 export const navTop =
-"<div class='first-top top-glass-background' >\
+  "<div class='first-top top-glass-background' >\
 <div class='image-div'><img class='logo-img' src='aynorm freelance.png' alt='Logo'> <p class='name-logo'>ynorm</p></div>\
 <div class='group-div'><ul class='top-ul'><li class='top-li'><a class='a-color-alt' href='https://aynorm.github.io/portfolio/latestportfolio.html'>Home</a></li><li class='top-li'><a class='a-color-alt' href='https://aynorm.github.io/portfolio/about'>About</a></li><li class='top-li'><a class='a-color-alt' href='https://aynorm.github.io/portfolio/portfolio'>Portfolio</a></li><li class='top-li'><a class='a-color-alt' href='https://aynorm.github.io/portfolio/contact'>Contact</a></li><li class='top-li'><a class='a-color-alt' href='https://aynorm.github.io/portfolio/hire-me'>Hire Me</a></li></ul></div>\
 <div class='hire-me-div'> <a class='a-color-alt' href='https://aynorm.github.io/portfolio/hire-me'> <img class='logo-img' src='hire me btn.png' alt='hire me'></a> </div>\
 </div>\
-"
+";
 
 document.getElementById("navTop").innerHTML = navTop;
 
@@ -49,6 +48,6 @@ export const bottomNav =
   <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/hire-me'><p class='p-bottom'>Services</p><img class='bottom-img' src='services btn.png' alt='services'></a> </li>\
   </ul>\
   </div>\
-"
+";
 
 document.getElementById("bottomNav").innerHTML = bottomNav;

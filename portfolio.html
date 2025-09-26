@@ -64,8 +64,6 @@
     <div id="mobileNav"></div>
     <div class="view-top" id="navTop"></div>
 
-    
-
     <div style="background-color: rgba(11, 28, 54, 0.2)">
       <div class="center-word-portfolio">
         <div class="mid-word-center">
@@ -82,394 +80,404 @@
       </div>
 
       <!-- DIGITAL CLOCK PROGRAM -->
-    <style>
-      @media only screen and (max-width: 700px) {
+      <style>
+        @media only screen and (max-width: 700px) {
+          #clock {
+            font-size: 2rem !important;
+          }
+
+          .digital-clock {
+            font-size: 2rem;
+          }
+        }
+
+        #clock-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 2px solid orange;
+          border-radius: 10px;
+        }
         #clock {
-          font-size: 2rem !important;
+          font-family: monospace;
+          font-size: 5.5rem;
+          font-weight: bold;
+          text-align: center;
+          backdrop-filter: blur(5px);
+          background-color: hsla(7, 60%, 35%, 0.295);
+          width: 100%;
+          color: white;
+        }
+      </style>
+      <h1 class="digital-clock" style="text-align: center">DIGITAL CLOCK</h1>
+      <div id="clock-container">
+        <div id="clock">00:00:00</div>
+      </div>
+      <script>
+        function updateClock() {
+          const now = new Date();
+          let hours = now.getHours();
+          const meridiem = hours >= 12 ? "PM" : "AM";
+          hours = hours % 12 || 12;
+          hours = hours.toString().padStart(2, 0);
+          const minutes = now.getMinutes().toString().padStart(2, 0);
+          const seconds = now.getSeconds().toString().padStart(2, 0);
+          const timeString = `${hours}:${minutes}:${seconds} ${meridiem}`;
+          document.getElementById("clock").textContent = timeString;
         }
 
-        .digital-clock {
-          font-size: 2rem;
+        updateClock();
+        setInterval(updateClock, 1000);
+      </script>
+      <hr />
+
+      <!-- STOPWATCH -->
+      <style>
+        @media only screen and (max-width: 700px) {
+          #display {
+            font-size: 2rem !important;
+          }
+
+          #myH1 {
+            font-size: 2rem !important;
+          }
+
+          #controls {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr 1fr !important;
+            align-items: center !important;
+            text-align: center !important;
+            column-gap: 10px !important;
+          }
+
+          .ssrBtn {
+            font-size: 0.6rem !important;
+            padding: 12px 6px !important;
+            margin: 3px !important;
+            display: fle !important;
+            min-width: 100% !important;
+            border-radius: 10px !important;
+            align-items: center !important;
+            text-align: center !important;
+          }
         }
-      }
 
-      #clock-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border: 2px solid orange;
-        border-radius: 10px;
-      }
-      #clock {
-        font-family: monospace;
-        font-size: 5.5rem;
-        font-weight: bold;
-        text-align: center;
-        backdrop-filter: blur(5px);
-        background-color: hsla(7, 60%, 35%, 0.295);
-        width: 100%;
-        color: white;
-      }
-    </style>
-    <h1 class="digital-clock" style="text-align: center">DIGITAL CLOCK</h1>
-    <div id="clock-container">
-      <div id="clock">00:00:00</div>
-    </div>
-    <script>
-      function updateClock() {
-        const now = new Date();
-        let hours = now.getHours();
-        const meridiem = hours >= 12 ? "PM" : "AM";
-        hours = hours % 12 || 12;
-        hours = hours.toString().padStart(2, 0);
-        const minutes = now.getMinutes().toString().padStart(2, 0);
-        const seconds = now.getSeconds().toString().padStart(2, 0);
-        const timeString = `${hours}:${minutes}:${seconds} ${meridiem}`;
-        document.getElementById("clock").textContent = timeString;
-      }
-
-      updateClock();
-      setInterval(updateClock, 1000);
-    </script>
-    <hr />
-
-    <!-- STOPWATCH -->
-    <style>
-      @media only screen and (max-width: 700px) {
-        #display {
-          font-size: 2rem !important;
+        #stopwatchBody {
+          background-color: hsla(39, 100%, 50%, 0.301);
+          border-radius: 20px;
+          padding: 0px 0px 10px 10px;
         }
 
         #myH1 {
-          font-size: 2rem !important;
+          font-size: 4rem;
+          font-family: Arial, Helvetica, sans-serif;
+          color: white;
+          text-align: center;
         }
 
-        #controls {
-          display: grid !important;
-          grid-template-columns: 1fr 1fr 1fr !important;
-          align-items: center !important;
-          text-align: center !important;
-          column-gap: 10px !important;
+        #container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 30px;
+          border: 5px solid;
+          border-radius: 50px;
+          background-color: hsla(0, 0%, 100%, 0.884);
         }
 
+        #display {
+          font-size: 5rem;
+          font-family: monospace;
+          font-weight: bold;
+          color: gray;
+          text-shadow: 2px 2px 2px black;
+        }
+
+        #controls,
         .ssrBtn {
-          font-size: 0.6rem !important;
-          padding: 12px 6px !important;
-          margin: 3px !important;
-          display: fle !important;
-          min-width: 100% !important;
-          border-radius: 10px !important;
-          align-items: center !important;
-          text-align: center !important;
+          font-size: 1.5rem;
+          font-weight: bold;
+          padding: 10px 20px;
+          margin: 5px;
+          min-width: 125px;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          color: white;
+          transition: background-color 0.5s ease;
         }
-      }
 
-      #stopwatchBody {
-        background-color: hsla(39, 100%, 50%, 0.301);
-        border-radius: 20px;
-        padding: 0px 0px 10px 10px;
-      }
+        #startBtn {
+          background-color: green;
+        }
+        #startBtn:hover {
+          background-color: greenyellow;
+        }
 
-      #myH1 {
-        font-size: 4rem;
-        font-family: Arial, Helvetica, sans-serif;
-        color: white;
-        text-align: center;
-      }
+        #stopBtn {
+          background-color: red;
+        }
+        #stopBtn:hover {
+          background-color: lightcoral;
+        }
 
-      #container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 30px;
-        border: 5px solid;
-        border-radius: 50px;
-        background-color: hsla(0, 0%, 100%, 0.884);
-      }
-
-      #display {
-        font-size: 5rem;
-        font-family: monospace;
-        font-weight: bold;
-        color: gray;
-        text-shadow: 2px 2px 2px black;
-      }
-
-      #controls,
-      .ssrBtn {
-        font-size: 1.5rem;
-        font-weight: bold;
-        padding: 10px 20px;
-        margin: 5px;
-        min-width: 125px;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-        color: white;
-        transition: background-color 0.5s ease;
-      }
-
-      #startBtn {
-        background-color: green;
-      }
-      #startBtn:hover {
-        background-color: greenyellow;
-      }
-
-      #stopBtn {
-        background-color: red;
-      }
-      #stopBtn:hover {
-        background-color: lightcoral;
-      }
-
-      #resetBtn {
-        background-color: blue;
-      }
-      #resetBtn:hover {
-        background-color: lightblue;
-      }
-    </style>
-    <div id="stopwatchBody">
-      <h1 id="myH1">STOPWATCH</h1>
-      <div id="container">
-        <div id="display">00:00:00:00</div>
-        <div id="controls">
-          <button class="ssrBtn" id="startBtn" onclick="start()">Start</button>
-          <button class="ssrBtn" id="stopBtn" onclick="stop()">Stop</button>
-          <button class="ssrBtn" id="resetBtn" onclick="reset()">Reset</button>
+        #resetBtn {
+          background-color: blue;
+        }
+        #resetBtn:hover {
+          background-color: lightblue;
+        }
+      </style>
+      <div id="stopwatchBody">
+        <h1 id="myH1">STOPWATCH</h1>
+        <div id="container">
+          <div id="display">00:00:00:00</div>
+          <div id="controls">
+            <button class="ssrBtn" id="startBtn" onclick="start()">
+              Start
+            </button>
+            <button class="ssrBtn" id="stopBtn" onclick="stop()">Stop</button>
+            <button class="ssrBtn" id="resetBtn" onclick="reset()">
+              Reset
+            </button>
+          </div>
         </div>
       </div>
-    </div>
-    <script>
-      const display = document.getElementById("display");
-      let timer = null;
-      let startTime = 0;
-      let elapsedTime = 0;
-      let isRunning = false;
+      <script>
+        const display = document.getElementById("display");
+        let timer = null;
+        let startTime = 0;
+        let elapsedTime = 0;
+        let isRunning = false;
 
-      function start() {
-        if (!isRunning) {
-          startTime = Date.now() - elapsedTime;
-          timer = setInterval(update, 10);
-          isRunning = true;
+        function start() {
+          if (!isRunning) {
+            startTime = Date.now() - elapsedTime;
+            timer = setInterval(update, 10);
+            isRunning = true;
+          }
         }
-      }
-      function stop() {
-        if (isRunning) {
+        function stop() {
+          if (isRunning) {
+            clearInterval(timer);
+            elapsedTime = Date.now() - startTime;
+            isRunning = false;
+          }
+        }
+
+        function reset() {
           clearInterval(timer);
-          elapsedTime = Date.now() - startTime;
+          startTime = 0;
+          elapsedTime = 0;
           isRunning = false;
+          display.textContent = "00:00:00:00";
         }
-      }
 
-      function reset() {
-        clearInterval(timer);
-        startTime = 0;
-        elapsedTime = 0;
-        isRunning = false;
-        display.textContent = "00:00:00:00";
-      }
+        function update() {
+          const currentTime = Date.now();
+          elapsedTime = currentTime - startTime;
 
-      function update() {
-        const currentTime = Date.now();
-        elapsedTime = currentTime - startTime;
+          let hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+          let minutes = Math.floor(elapsedTime / (1000 * 60)) % 60;
+          let seconds = Math.floor((elapsedTime / 1000) % 60);
+          let milliseconds = Math.floor((elapsedTime % 1000) / 10);
 
-        let hours = Math.floor(elapsedTime / (1000 * 60 * 60));
-        let minutes = Math.floor(elapsedTime / (1000 * 60)) % 60;
-        let seconds = Math.floor((elapsedTime / 1000) % 60);
-        let milliseconds = Math.floor((elapsedTime % 1000) / 10);
+          hours = String(hours).padStart(2, "0");
+          minutes = String(minutes).padStart(2, "0");
+          seconds = String(seconds).padStart(2, "0");
+          milliseconds = String(milliseconds).padStart(2, "0");
 
-        hours = String(hours).padStart(2, "0");
-        minutes = String(minutes).padStart(2, "0");
-        seconds = String(seconds).padStart(2, "0");
-        milliseconds = String(milliseconds).padStart(2, "0");
+          display.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
+        }
+      </script>
+      <hr />
 
-        display.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
-      }
-    </script>
-    <hr />
+      <!-- Calculator -->
+      <style>
+        @media only screen and (max-width: 700px) {
+          #calculator {
+            max-width: 400px !important;
+          }
 
-    <!-- Calculator -->
-    <style>
-      @media only screen and (max-width: 700px) {
+          #calculatorDisplay {
+            font-size: 1.5rem !important;
+          }
+
+          .c-Btn {
+            font-size: 1.5rem !important;
+            padding: 1px !important;
+            width: 60px !important;
+            height: 60px !important;
+          }
+
+          #keys {
+            padding: 0px !important;
+            gap: 2px !important;
+          }
+
+          .calculator-c {
+            font-size: 2rem !important;
+          }
+        }
+        .calculator-body {
+          border-radius: 12px;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: none;
+        }
         #calculator {
-          max-width: 400px !important;
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: hsla(0, 0%, 0%, 0.829);
+          border-radius: 15px;
+          max-width: 500px;
+          overflow: hidden;
         }
 
         #calculatorDisplay {
-          font-size: 1.5rem !important;
-        }
-
-        .c-Btn {
-          font-size: 1.5rem !important;
-          padding: 1px !important;
-          width: 60px !important;
-          height: 60px !important;
+          width: 100%;
+          padding: 20px;
+          font-size: 5rem;
+          text-align: left;
+          border: none;
+          background-color: hsla(0, 0%, 0%, 0.418);
+          color: white;
         }
 
         #keys {
-          padding: 0px !important;
-          gap: 2px !important;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 10px;
+          padding: 25px;
         }
 
-        .calculator-c {
-          font-size: 2rem !important;
+        .c-Btn {
+          width: 100px;
+          height: 100px;
+          border-radius: 50px;
+          border: none;
+          background-color: hsla(0, 0%, 0%, 0.637);
+          color: white;
+          font-size: 3rem;
+          font-weight: bold;
+          cursor: pointer;
         }
-      }
-      .calculator-body {
-        border-radius: 12px;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: none;
-      }
-      #calculator {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: hsla(0, 0%, 0%, 0.829);
-        border-radius: 15px;
-        max-width: 500px;
-        overflow: hidden;
-      }
 
-      #calculatorDisplay {
-        width: 100%;
-        padding: 20px;
-        font-size: 5rem;
-        text-align: left;
-        border: none;
-        background-color: hsla(0, 0%, 0%, 0.418);
-        color: white;
-      }
+        .c-Btn:hover {
+          background-color: gray;
+        }
 
-      #keys {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-        padding: 25px;
-      }
+        .c-Btn:active {
+          background-color: gainsboro;
+        }
 
-      .c-Btn {
-        width: 100px;
-        height: 100px;
-        border-radius: 50px;
-        border: none;
-        background-color: hsla(0, 0%, 0%, 0.637);
-        color: white;
-        font-size: 3rem;
-        font-weight: bold;
-        cursor: pointer;
-      }
-
-      .c-Btn:hover {
-        background-color: gray;
-      }
-
-      .c-Btn:active {
-        background-color: gainsboro;
-      }
-
-      .operator-btn {
-        background-color: orange;
-      }
-      .operator-btn:hover {
-        background-color: orangered;
-      }
-      .operator-btn:active {
-        background-color: olivedrab;
-      }
-    </style>
-    <h1 class="calculator-c" style="text-align: center">CALCULATOR</h1>
-    <div class="calculator-body">
-      <div id="calculator">
-        <input id="calculatorDisplay" readonly />
-        <div id="keys">
-          <button class="c-Btn operator-btn" onclick="appendToDisplay('+')">
-            +
-          </button>
-          <button class="c-Btn" onclick="appendToDisplay('7')">7</button>
-          <button class="c-Btn" onclick="appendToDisplay('8')">8</button>
-          <button class="c-Btn" onclick="appendToDisplay('9')">9</button>
-          <button class="c-Btn operator-btn" onclick="appendToDisplay('-')">
-            -
-          </button>
-          <button class="c-Btn" onclick="appendToDisplay('4')">4</button>
-          <button class="c-Btn" onclick="appendToDisplay('5')">5</button>
-          <button class="c-Btn" onclick="appendToDisplay('6')">6</button>
-          <button class="c-Btn operator-btn" onclick="appendToDisplay('*')">
-            *
-          </button>
-          <button class="c-Btn" onclick="appendToDisplay('1')">1</button>
-          <button class="c-Btn" onclick="appendToDisplay('2')">2</button>
-          <button class="c-Btn" onclick="appendToDisplay('3')">3</button>
-          <button class="c-Btn operator-btn" onclick="appendToDisplay('/')">
-            /
-          </button>
-          <button class="c-Btn" onclick="appendToDisplay('0')">0</button>
-          <button class="c-Btn" onclick="appendToDisplay('.')">.</button>
-          <button class="c-Btn" onclick="calculate()">=</button>
-          <button class="c-Btn operator-btn" onclick="clearDisplay()">C</button>
+        .operator-btn {
+          background-color: orange;
+        }
+        .operator-btn:hover {
+          background-color: orangered;
+        }
+        .operator-btn:active {
+          background-color: olivedrab;
+        }
+      </style>
+      <h1 class="calculator-c" style="text-align: center">CALCULATOR</h1>
+      <div class="calculator-body">
+        <div id="calculator">
+          <input id="calculatorDisplay" readonly />
+          <div id="keys">
+            <button class="c-Btn operator-btn" onclick="appendToDisplay('+')">
+              +
+            </button>
+            <button class="c-Btn" onclick="appendToDisplay('7')">7</button>
+            <button class="c-Btn" onclick="appendToDisplay('8')">8</button>
+            <button class="c-Btn" onclick="appendToDisplay('9')">9</button>
+            <button class="c-Btn operator-btn" onclick="appendToDisplay('-')">
+              -
+            </button>
+            <button class="c-Btn" onclick="appendToDisplay('4')">4</button>
+            <button class="c-Btn" onclick="appendToDisplay('5')">5</button>
+            <button class="c-Btn" onclick="appendToDisplay('6')">6</button>
+            <button class="c-Btn operator-btn" onclick="appendToDisplay('*')">
+              *
+            </button>
+            <button class="c-Btn" onclick="appendToDisplay('1')">1</button>
+            <button class="c-Btn" onclick="appendToDisplay('2')">2</button>
+            <button class="c-Btn" onclick="appendToDisplay('3')">3</button>
+            <button class="c-Btn operator-btn" onclick="appendToDisplay('/')">
+              /
+            </button>
+            <button class="c-Btn" onclick="appendToDisplay('0')">0</button>
+            <button class="c-Btn" onclick="appendToDisplay('.')">.</button>
+            <button class="c-Btn" onclick="calculate()">=</button>
+            <button class="c-Btn operator-btn" onclick="clearDisplay()">
+              C
+            </button>
+          </div>
         </div>
-      </div>
 
-      <script>
-        const calculatorDisplay = document.getElementById("calculatorDisplay");
+        <script>
+          const calculatorDisplay =
+            document.getElementById("calculatorDisplay");
 
-        function appendToDisplay(input) {
-          calculatorDisplay.value += input;
-        }
-
-        function clearDisplay() {
-          calculatorDisplay.value = "";
-        }
-
-        function calculate() {
-          try {
-            calculatorDisplay.value = eval(calculatorDisplay.value);
-          } catch (error) {
-            calculatorDisplay.value = "Error";
+          function appendToDisplay(input) {
+            calculatorDisplay.value += input;
           }
-        }
-      </script>
-    </div>
-    <hr />
- 
-    <!-- Amazon Calculator -->
-    <div class="amazon-ship">
-      <p>Youtube Subscribe</p>
-      <button>Subscribe</button>
 
-      <p>Amazon Shipping Calculator</p>
-      <p>Orders under $40 = +$10 shipping</p>
-      <p>Orders over $40 = FREE shipping</p>
-      <input style="height: 2.5rem;" class="js-cost-input" placeholder="Cost of order" onkeydown="handleCostkeydown(event)
-      ">
-      <button onclick="calculateTotal()">Calculate</button>
-      <p class="js-total-cost"></p>
+          function clearDisplay() {
+            calculatorDisplay.value = "";
+          }
 
+          function calculate() {
+            try {
+              calculatorDisplay.value = eval(calculatorDisplay.value);
+            } catch (error) {
+              calculatorDisplay.value = "Error";
+            }
+          }
+        </script>
+      </div>
+      <hr />
 
-      <script>
-        function handleCostkeydown(event) {
-          console.log(event.key);
-      if (event.key === 'Enter') {
-        calculateTotal()
-      }
-        }
-        function calculateTotal () {
-        let inputElement = document.querySelector ('.js-cost-input');
-        let cost =  Number(inputElement.value);
+      <!-- Amazon Calculator -->
+      <div class="amazon-ship">
+        <p>Youtube Subscribe</p>
+        <button>Subscribe</button>
 
-        if (cost < 40) {
-          cost = cost + 10;
-        }
+        <p>Amazon Shipping Calculator</p>
+        <p>Orders under $40 = +$10 shipping</p>
+        <p>Orders over $40 = FREE shipping</p>
+        <input
+          style="height: 2.5rem"
+          class="js-cost-input"
+          placeholder="Cost of order"
+          onkeydown="handleCostkeydown(event)
+      "
+        />
+        <button onclick="calculateTotal()">Calculate</button>
+        <p class="js-total-cost"></p>
 
-        document.querySelector('.js-total-cost').innerHTML = `$${cost}`;
+        <script>
+          function handleCostkeydown(event) {
+            console.log(event.key);
+            if (event.key === "Enter") {
+              calculateTotal();
+            }
+          }
+          function calculateTotal() {
+            let inputElement = document.querySelector(".js-cost-input");
+            let cost = Number(inputElement.value);
 
-        }
-      </script>
-    </div>
-    <hr>
+            if (cost < 40) {
+              cost = cost + 10;
+            }
+
+            document.querySelector(".js-total-cost").innerHTML = `$${cost}`;
+          }
+        </script>
+      </div>
+      <hr />
 
       <div class="container">
         <div class="items">
