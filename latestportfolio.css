@@ -10,6 +10,21 @@
 }
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 700px) {
+  body {
+    background-image: url(backgroundlaptop.png);
+    background-attachment: fixed;
+    background-size: cover !important;
+    background-repeat: no-repeat;
+    background-color: #11181c;
+    color: white;
+    font-family: Spacegrotesk, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+      "Helvetica Neue";
+    font-size: 18px;
+    font-weight: 400;
+    align-items: center;
+    justify-content: center;
+  }
   .a-color-alt {
     color: white !important;
   }
@@ -20,7 +35,7 @@
   }
 
   .top-glass-background {
-    backgroun: hsl(0, 0%, 90%) !important;
+    /* backgroun: hsl(0, 0%, 90%) !important; */
     border-radius: 10px !important;
     box-shadow: 0 1px 1px orange !important;
     backdrop-filter: blur(2px) !important;
@@ -271,7 +286,7 @@
 }
 
 .top-glass-background {
-  backgroun: hsl(0, 0%, 90%);
+  /* backgroun: hsl(0, 0%, 90%); */
   border-radius: 10px;
   box-shadow: 0 1px 1px orange;
   backdrop-filter: blur(2px);
@@ -353,6 +368,7 @@
 
 body {
   background-image: url(backgroundlaptop.png);
+  background-attachment: fixed;
   background-color: #11181c;
   color: white;
   font-family: Spacegrotesk, system-ui, -apple-system, BlinkMacSystemFont,
@@ -597,14 +613,14 @@ span {
 }
 
 .skills-colom {
-  background: hsla(0, 0%, 100%, 0.05);
+  /* background: hsla(0, 0%, 100%, 0.05); */
   width: 100%;
   max-width: 406px;
   min-width: 280px;
   padding: 50px 30px 50px 30px;
   border-radius: 10px;
   box-shadow: 0 4px 30px hsl(0, 0%, 10%);
-  backdrop-filter: blur(85px);
+  /* backdrop-filter: blur(85px); */
 }
 
 .skills-colom:hover {
@@ -646,10 +662,16 @@ img {
 .glass-background {
   background-color: hsla(0, 0%, 100%, 0.05);
   /* background-color: whitesmoke; */
-  border-radius: 10px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(0px);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.952);
+  backdrop-filter: blur(2px);
   padding: 10px;
+}
+
+.general-glass-background {
+  background-color: hsla(0, 0%, 100%, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.952);
+  backdrop-filter: blur(2px);
 }
 
 .last-content {
@@ -680,7 +702,7 @@ img {
 }
 
 .snippet-div {
-  background-color: hsl(217, 17%, 21%, 0.5);
+  /* background-color: hsl(217, 17%, 21%, 0.5); */
   padding: 0px 0px 40px 0px;
   border-radius: 20px;
   width: 100%;
