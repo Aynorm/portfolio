@@ -478,6 +478,28 @@
       </div>
       <hr />
 
+      <!-- Todo List -->
+      <div>
+        <p>Todo List</p>
+        <input placeholder="Todo List" class="js-name-input" />
+        <button onclick="addTodo()">Add</button>
+      </div>
+
+      <script>
+        const todoList = [];
+        function addTodo() {
+          const inputElement = document.querySelector(".js-name-input");
+          const name = inputElement.value;
+
+          todoList.push(name);
+          console.log(todoList);
+
+          inputElement.value = "";
+        }
+      </script>
+
+      <!--Weather app-->
+
       <div class="container">
         <div class="items general-glass-background">
           <div class="button-portfolio-subdiv">

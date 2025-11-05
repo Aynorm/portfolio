@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Background Switch — Dark ↔ Light</title>
+    <style>
+      :root {
+        --transition-time: 420ms;
+        --bg-dark: url("/LatestPortfolio/backgroundlaptop.png"); /* Replace with your dark background image */
+        --bg-light: url("/LatestPortfolio/backgroundlaptopwhite.png"); /* Replace with your light background image */
+        --bg-color-dark: #0f0f10;
+        --bg-color-light: #ffffff;
+        --overlay-ease: cubic-bezier(0.2, 0.9, 0.2, 1);
+      }
+
+      /* Respect reduced motion preference */
+      @media (prefers-reduced-motion: reduce) {
+        :root {
+          --transition-time: 0ms;
+        }
+      }
+
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+
+      /* container that holds the background layers */
+      .bg {
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      /* Use two absolutely-positioned layers and crossfade via opacity variable */
+      .bg__layer {
+        position: absolute;
+        inset: 0;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: opacity var(--transition-time) var(--overlay-ease);
+        will-change: opacity;
+      }
+
+      /* dark layer (bottom) */
+      .bg__layer--dark {
+        background-image: var(--bg-dark);
+        background-color: var(--bg-color-dark);
+        opacity: calc(1 - var(--light-amount, 0));
+      }
+
+      /* light layer (top) */
+      .bg__layer--light {
+        background-image: var(--bg-light);
+        background-color: var(--bg-color-light);
+        opacity: var(--light-amount, 0);
+      }
+
+      /* Fallback when you only want color change (no images) */
+      .bg--color-only .bg__layer--dark {
+        background-image: none;
+      }
+      .bg--color-only .bg__layer--light {
+        background-image: none;
+      }
+
+      /* Content styling for demo */
+      .ui {
+        display: flex;
+        gap: 12px;
+        padding: 18px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .btn {
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        border: 0;
+        padding: 10px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .btn--ghost {
+        background: rgba(255, 255, 255, 0.06);
+        color: inherit;
+      }
+
+      /* Visual indicator — optional */
+      .status {
+        font-size: 14px;
+        opacity: 0.85;
+      }
+
+      /* When theme is light adjust button theme for contrast */
+      .theme-light .btn {
+        background: rgba(0, 0, 0, 0.08);
+        color: #111;
+      }
+      .theme-light .btn--ghost {
+        background: rgba(0, 0, 0, 0.02);
+        color: #111;
+      }
+
+      /* Ensure body text readable on both backgrounds */
+      body {
+        color: #111;
+      }
+      .theme-dark body {
+        color: #f6f6f6;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background crossfade layers -->
+    <div class="bg" id="bg">
+      <div class="bg__layer bg__layer--dark" aria-hidden="true"></div>
+      <div class="bg__layer bg__layer--light" aria-hidden="true"></div>
+    </div>
+
+    <!-- UI: toggle and status -->
+    <header class="ui" style="background-color: aquamarine">
+      <div style="background-color: aqua">
+        <strong>Workspace mockup</strong>
+        <div class="status" id="status">Theme: —</div>
+      </div>
+
+      <div style="background-color: blue">
+        <button
+          class="btn"
+          id="toggleBtn"
+          aria-pressed="false"
+          aria-label="Toggle background theme"
+        >
+          Toggle Light / Dark
+          <!-- <img
+            style="width: 3%"
+            src="/LatestPortfolio/toggle-switch-svgrepo-com.svg"
+            alt=""
+          /> -->
+        </button>
+        <button
+          class="btn btn--ghost"
+          id="autoBtn"
+          aria-pressed="false"
+          title="Follow system preference"
+        >
+          Follow system
+        </button>
+      </div>
+    </header>
+
+    <main style="padding: 24px; background-color: hsl(271, 76%, 53%, 0.3)">
+      <p style="background-color: yellowgreen">
+        Place your content here. The background (images or colors) crossfade
+        smoothly between dark and light when toggled.
+      </p>
+      <p
+        style="
+          margin-top: 400px;
+          opacity: 0.6;
+          font-size: 13px;
+          background-color: violet;
+        "
+      >
+        Demo page: images referenced in CSS variables must exist or will
+        fallback to solid colors.
+      </p>
+    </main>
+
+    <script>
+      (function () {
+        const ROOT = document.documentElement;
+        const BG = document.getElementById("bg");
+        const status = document.getElementById("status");
+        const toggleBtn = document.getElementById("toggleBtn");
+        const autoBtn = document.getElementById("autoBtn");
+
+        const STORAGE_KEY = "bg-theme"; // stored values: "dark" | "light" | "auto"
+        const prefers = window.matchMedia("(prefers-color-scheme: dark)");
+
+        // helper to set the effective theme (dark or light)
+        function applyTheme(theme) {
+          // theme is 'dark' or 'light'
+          if (theme === "light") {
+            ROOT.classList.remove("theme-dark");
+            ROOT.classList.add("theme-light");
+            ROOT.style.setProperty("--light-amount", "1"); // light layer fully visible
+            document.body.classList.remove("theme-dark");
+          } else {
+            ROOT.classList.remove("theme-light");
+            ROOT.classList.add("theme-dark");
+            ROOT.style.setProperty("--light-amount", "0"); // dark layer fully visible
+            document.body.classList.remove("theme-light");
+          }
+          // Update UI
+          status.textContent = "Theme: " + theme;
+          toggleBtn.setAttribute(
+            "aria-pressed",
+            theme === "light" ? "true" : "false"
+          );
+        }
+
+        // load saved preference (or default to auto)
+        function getSaved() {
+          const v = localStorage.getItem(STORAGE_KEY);
+          return v || "auto";
+        }
+
+        // compute effective theme based on saved preference and system
+        function computeEffective(pref) {
+          if (pref === "auto") {
+            return prefers.matches ? "dark" : "light";
+          }
+          return pref; // 'dark' or 'light'
+        }
+
+        // apply mode: 'dark' | 'light' or 'auto'
+        function setMode(mode, save = true) {
+          if (save) localStorage.setItem(STORAGE_KEY, mode);
+          // update auto button state
+          autoBtn.setAttribute("aria-pressed", mode === "auto");
+          // compute and apply final theme
+          const effective = computeEffective(mode);
+          applyTheme(effective);
+        }
+
+        // toggle between dark & light explicitly (switches out of auto into explicit)
+        function toggleExplicit() {
+          const currentPref = getSaved();
+          // if auto, determine current effective and flip it
+          let currentEffective = computeEffective(currentPref);
+          const newTheme = currentEffective === "light" ? "dark" : "light";
+          setMode(newTheme, true);
+        }
+
+        // initialize
+        function init() {
+          // If you want to support color-only fallback when images are missing:
+          // BG.classList.add('bg--color-only');
+
+          // set initial: prefer saved value else auto
+          const saved = getSaved();
+          // watch system changes if in auto mode
+          if (saved === "auto") {
+            prefers.addEventListener("change", () => {
+              setMode("auto", false);
+            });
+          }
+          setMode(saved, false);
+
+          // UI handlers
+          toggleBtn.addEventListener("click", (e) => {
+            // clicking toggles explicit theme (leaves auto)
+            // if currently auto, we will switch to the opposite of current effective
+            toggleExplicit();
+            // disable auto if it was enabled
+            if (getSaved() === "auto") {
+              // after toggling, ensure we saved an explicit choice (toggleExplicit saves)
+            }
+            // Remove 'auto' pressed state
+            autoBtn.setAttribute("aria-pressed", "false");
+          });
+
+          autoBtn.addEventListener("click", (e) => {
+            // toggle auto on/off: if auto already -> switch to explicit (system effective inverted)
+            const savedNow = getSaved();
+            if (savedNow === "auto") {
+              // switch to the opposite explicit theme of current effective
+              const effective = computeEffective("auto");
+              const newExplicit = effective === "light" ? "dark" : "light";
+              setMode(newExplicit, true);
+            } else {
+              // turn on auto
+              setMode("auto", true);
+            }
+          });
+        }
+
+        init();
+      })();
+    </script>
+  </body>
+</html>
