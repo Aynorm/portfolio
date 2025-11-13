@@ -365,8 +365,8 @@
 }
 
 body {
-  /* background-image: url(backgroundlaptop.png);
-  background-attachment: fixed; */
+  background-image: url(faded_gallery-OfdOEdGYiuk-unsplash.jpg) !important;
+  background-attachment: fixed;
   background: #11181c;
 
   color: white;
@@ -660,15 +660,15 @@ img {
 .glass-background {
   background-color: hsla(0, 0%, 100%, 0.1);
   border-radius: 20px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.952);
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.952); */
   backdrop-filter: blur(100px);
   padding: 10px;
 }
 
 .general-glass-background {
   background-color: hsla(0, 0%, 100%, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.952);
-  backdrop-filter: blur(2px);
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.952); */
+  backdrop-filter: blur(100px);
 }
 
 .last-content {
