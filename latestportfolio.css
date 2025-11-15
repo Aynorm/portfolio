@@ -520,6 +520,7 @@ button {
   flex-grow: 1;
   flex-basis: 200;
   padding: 10px;
+  border: 1px solid hsl(0, 0%, 50%, 0.3);
 }
 
 .experience {
@@ -624,7 +625,8 @@ span {
   min-width: 280px;
   padding: 50px 30px 50px 30px;
   border-radius: 14px;
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(0, 0%, 50%, 0.3);
 }
 
 .skills-colom:hover {
@@ -667,7 +669,7 @@ img {
   background-color: hsla(0, 0%, 100%, 0.1);
   border-radius: 20px;
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.952); */
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(10px);
   padding: 10px;
 }
 
