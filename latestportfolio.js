@@ -22,7 +22,7 @@
 export const mobileNav =
   "<div class='mobilenav-top top-glass-background'>\
 <div class='mobile-logo-div'><img class='logo-img' src='aynorm freelance.png' alt='Logo'> <p class='name-logo'>ynorm</p></div>\
-<div class='hire-me-div'><button class=switchbtn><img class='switch-btn' src='switch-3-512.png' alt='switch'</button> <a href='https://aynorm.github.io/portfolio/hire-me'> <img class='logo-img' src='hire me btn.png' alt='hire-me'></a></div>\
+<div class='hire-me-div'><button class='switchbtn' onclick='lightTheme()'><img class='switch-btn' src='switch-3-512.png' alt='switch'</button> <a href='https://aynorm.github.io/portfolio/hire-me'> <img class='logo-img' src='hire me btn.png' alt='hire-me'></a></div>\
 </div>\
 <hr>";
 

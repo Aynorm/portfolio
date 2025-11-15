@@ -279,9 +279,13 @@
 }
 
 .bottom-img {
-  max-width: 25px;
-  min-width: 25px;
+  max-width: 35px;
+  min-width: 35px;
   opacity: 80%;
+  border: 1px solid black;
+  background-color: black;
+  border-radius: 50%;
+  padding: 3px;
 }
 
 .top-glass-background {
