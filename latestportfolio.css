@@ -78,7 +78,6 @@
   .hire-me-div {
     margin-right: 10px;
     margin-top: -2px !important;
-    padding: 5px !important;
   }
 
   .view-top {
@@ -214,16 +213,18 @@
 }
 
 .hire-me-div {
-  background-color: hsl(0, 0%, 100%, 0.2);
+  background-color: hsl(0, 0%, 0%, 0);
   border-radius: 10px;
-  backdrop-filter: blur(100px);
-  padding: 10px;
-  margin-right: 10px;
+  backdrop-filter: blur(10px);
+  padding: 10p;
+  margin-right: 10p;
   margin-top: -11px;
+  padding: 0px;
+  display: flex !important;
 }
 .logo-img {
   max-width: 30px;
-  background-color: hsl(39, 100%, 50%, 0.8);
+  background-color: transparent;
   border-radius: 50px;
   padding: 4px;
 }
@@ -235,7 +236,7 @@
 }
 .first-top {
   display: grid;
-  grid-template-columns: 1fr 2fr 58px;
+  grid-template-columns: 1fr 2fr 110px;
   align-items: center !important;
 }
 .image-div {
@@ -526,6 +527,7 @@ button {
   height: 29px;
   border: 0.1px solid hsl(0, 0%, 100%, 0.3);
   border-radius: 50%;
+  background-color: black;
   padding: 2px;
 }
 
@@ -940,6 +942,20 @@ img {
 #main {
   transition: margin-left 0.5s;
   display: non;
+}
+
+.switchbtn {
+  padding: 2px;
+  background-color: hsl(0, 0%, 0%, 0.1);
+}
+.switch-btn {
+  width: 30px;
+}
+
+.lightTheme {
+  color: black;
+  background-color: white;
+  background-image: url(faded_gallery-OfdOEdGYiuk-unsplashwhite.png) !important;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
