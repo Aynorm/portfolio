@@ -22,7 +22,7 @@
 export const mobileNav =
   "<div class='mobilenav-top top-glass-background'>\
 <div class='mobile-logo-div'><img class='logo-img' src='aynorm freelance.png' alt='Logo'> <p class='name-logo'>ynorm</p></div>\
-<div class='hire-me-div'><button class='switchbtn' onclick='lightTheme()'><img class='switch-btn' src='switch-3-512.png' alt='switch'</button> <a href='https://aynorm.github.io/portfolio/hire-me'> <img class='logo-img' src='hire me btn.png' alt='hire-me'></a></div>\
+<div class='hire-me-div'><button class='switchbtn' onclick='lightTheme()'><img class='switch-btn' src='switch-3-512.png' alt='switch'</button> <a href='https://aynorm.github.io/portfolio/hire-me'> <img class='switch-btn' src='hire me btn.png' alt='hire-me'></a></div>\
 </div>\
 <hr>";
 
@@ -32,7 +32,7 @@ export const navTop =
   "<div class='first-top top-glass-background' >\
 <div class='image-div'><img class='logo-img' src='aynorm freelance.png' alt='Logo'> <p class='name-logo'>ynorm</p></div>\
 <div class='group-div'><ul class='top-ul'><li class='top-li'><a class='a-color-alt' href='https://aynorm.github.io/portfolio/latestportfolio.html'>Home</a></li><li class='top-li'><a class='a-color-alt' href='https://aynorm.github.io/portfolio/about'>About</a></li><li class='top-li'><a class='a-color-alt' href='https://aynorm.github.io/portfolio/portfolio'>Portfolio</a></li><li class='top-li'><a class='a-color-alt' href='https://aynorm.github.io/portfolio/contact'>Contact</a></li><li class='top-li'><a class='a-color-alt' href='https://aynorm.github.io/portfolio/hire-me'>Hire Me</a></li></ul></div>\
-<div class='hire-me-div'><button class='switchbtn' onclick='lightTheme()'><img class='switch-btn' src='switch-3-512.png' alt='switch'</button> <a class='a-color-alt' href='https://aynorm.github.io/portfolio/hire-me'> <img class='logo-img' src='hire me btn.png' alt='hire me'></a> </div>\
+<div class='hire-me-div'><button class='switchbtn' onclick='lightTheme()'><img class='switch-btn' src='switch-3-512.png' alt='switch'</button> <a class='a-color-alt' href='https://aynorm.github.io/portfolio/hire-me'> <img class='switch-btn' src='hire me btn.png' alt='hire me'></a> </div>\
 </div>\
 ";
 

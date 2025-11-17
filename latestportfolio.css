@@ -31,13 +31,13 @@
 
   .mobilenav-top {
     display: grid !important;
-    background: transparent !important;
+    background: black !important;
   }
 
   .top-glass-background {
     /* backgroun: hsl(0, 0%, 90%) !important; */
     border-radius: 10px !important;
-    box-shadow: 0 1px 1px orange !important;
+    /* box-shadow: 0 1px 1px orange !important; */
     backdrop-filter: blur(2px) !important;
     padding: 0px !important;
     padding: 0px 0px 0px 0px !important;
@@ -59,7 +59,7 @@
   .name-logo {
     font-weight: 900;
     font-size: medium !important;
-    color: white !important;
+    /* color: white !important; */
     font-family: roboto;
   }
 
@@ -107,7 +107,7 @@
   .mobile {
     display: grid !important;
     position: fixed !important;
-    bottom: -2px !important;
+    bottom: -10px !important;
     width: 100% !important;
     margin-left: -8px !important;
   }
@@ -165,6 +165,10 @@
     min-width: 280px;
   }
 
+  .discover-general {
+    margin-bottom: 50px;
+  }
+
   .h2-general {
     font-size: 17px;
   }
@@ -201,6 +205,7 @@
   align-items: center;
   justify-content: space-between;
   display: none;
+  border: 1px solid hsl(0, 0%, 50%, 0.6);
 }
 
 .mobile-logo-div {
@@ -210,6 +215,8 @@
 
 .mobile {
   display: none;
+  background-color: black;
+  border-top: 1px solid gray;
 }
 
 .hire-me-div {
@@ -223,16 +230,18 @@
   display: flex !important;
 }
 .logo-img {
-  max-width: 30px;
+  max-width: 40px;
   background-color: transparent;
   border-radius: 50px;
+  opacity: 90%;
   padding: 4px;
 }
 
 .name-logo {
   font-weight: 900;
   font-size: x-large;
-  color: white;
+  color: gray;
+  /* color: white; */
 }
 .first-top {
   display: grid;
@@ -258,7 +267,7 @@
 .top-li {
   padding: 10px 18px;
   font-weight: 500;
-  color: black !important;
+  /* color: gray !important; */
 }
 
 .top-li:hover {
@@ -267,8 +276,12 @@
 }
 
 .a-color-alt {
-  color: black !important;
-  color: white !important;
+  /* color: black !important;
+  color: white !important; */
+  background-color: hsl(0, 0%, 0%, 0.9);
+  border-radius: 12px;
+  padding: 3px 5px 3px 5px;
+  color: white;
 }
 
 .ul-bottom {
@@ -281,17 +294,14 @@
 .bottom-img {
   max-width: 35px;
   min-width: 35px;
-  opacity: 80%;
-  border: 1px solid black;
-  background-color: black;
-  border-radius: 50%;
+  opacity: 50%;
   padding: 3px;
 }
 
 .top-glass-background {
-  /* backgroun: hsl(0, 0%, 90%); */
+  /* background: hsl(0, 0%, 90%); */
   border-radius: 10px;
-  box-shadow: 0 1px 1px orange;
+  /* box-shadow: 0 1px 1px orange; */
   backdrop-filter: blur(2px);
   padding: 0px;
   padding: 0px 0px 0px 0px;
@@ -391,7 +401,7 @@ a {
   font-size: 16px;
   letter-spacing: 0.06em;
   text-decoration: none;
-  color: white;
+  color: gray;
 }
 
 a:hover {
@@ -549,6 +559,9 @@ button {
 .img-pre-work {
   width: 100px;
   margin-left: -15px;
+  background-color: hsl(0, 0%, 0%, 0.3);
+  padding: 2px;
+  border-radius: 14px;
 }
 
 .about-me-gen-max-width-div {
@@ -668,6 +681,7 @@ img {
 .glass-background {
   background-color: hsla(0, 0%, 100%, 0.1);
   border-radius: 20px;
+  border: 1px solid hsl(0, 0%, 50%, 0.3);
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.952); */
   backdrop-filter: blur(10px);
   padding: 10px;
@@ -676,7 +690,7 @@ img {
 .general-glass-background {
   background-color: hsla(0, 0%, 100%, 0.05);
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.952); */
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(10px);
 }
 
 .last-content {
@@ -707,11 +721,12 @@ img {
 }
 
 .snippet-div {
-  /* background-color: hsl(217, 17%, 21%, 0.5); */
+  background-color: hsl(0, 0%, 100%, 0.2);
   padding: 0px 0px 40px 0px;
   border-radius: 20px;
   width: 100%;
   height: 100%;
+  border: 1px solid hsl(0, 0%, 50%, 0.2);
 }
 
 .snippet-div:hover,
@@ -869,6 +884,11 @@ img {
   color: white;
 }
 
+.discover-div {
+  background-color: hsl(0, 0%, 100%, 0.1);
+  border: 1px solid hsl(0, 0%, 50%, 0.2);
+}
+
 .topnav a {
   float: left;
   display: block;
@@ -952,15 +972,16 @@ img {
 
 .switchbtn {
   padding: 2px;
-  background-color: hsl(0, 0%, 0%, 0.1);
+  background-color: hsl(0, 0%, 0%);
 }
 .switch-btn {
   width: 30px;
+  opacity: 50%;
 }
 
 .lightTheme {
-  color: black;
-  background-color: white;
+  color: black !important;
+  background-color: whitesmoke;
   background-image: url(faded_gallery-OfdOEdGYiuk-unsplashwhite.png) !important;
 }
 

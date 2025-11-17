@@ -63,7 +63,15 @@
     <div id="mobileNav"></div>
     <div class="view-top" id="navTop"></div>
 
-    <div style="background-color: rgba(11, 28, 54, 0.2)">
+    <div
+      class="general-glass-background"
+      style="
+        background-color: hsl(0, 0%, 100%, 0.2);
+        padding: 10px;
+        border-radius: 14px;
+        margin-bottom: 30px;
+      "
+    >
       <div class="center-word-portfolio">
         <div class="mid-word-center">
           <h1>Portfolio</h1>
@@ -552,6 +560,12 @@
     </div>
     <hr />
     <div id="bottomNav"></div>
+    <script>
+      function lightTheme() {
+        var element = document.body;
+        element.classList.toggle("lightTheme");
+      }
+    </script>
     <script type="module" src="latestportfoliooption.js"></script>
   </body>
 </html>

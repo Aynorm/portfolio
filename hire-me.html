@@ -18,12 +18,12 @@
           font-size: 16px;
         }
 
-        p,
+        /* p,
         h2,
         h3,
         h1 {
           color: white;
-        }
+        } */
       }
 
       button {
@@ -54,16 +54,16 @@
         gap: 15px;
         width: 100%;
         padding: 10px 0px 10px 0px;
-        background-color: rgba(11, 28, 54, 0.2);
       }
       .hire-me {
-        background-color: hsl(217, 17%, 21%, 0.4);
+        background-color: hsl(0, 0%, 100%, 0.2);
         width: 100%;
         width: 350px;
-        border-radius: 20px;
+        border-radius: 14px;
         padding: 40px 20px 40px 20px;
         flex-grow: 1;
         flex-basis: 200;
+        border: 1px solid hsl(0, 0%, 50%, 0.2);
       }
       .hire-me:hover {
         -ms-transform: scale(1.1);
@@ -232,6 +232,12 @@
     <hr />
 
     <div id="bottomNav"></div>
+    <script>
+      function lightTheme() {
+        var element = document.body;
+        element.classList.toggle("lightTheme");
+      }
+    </script>
     <script type="module" src="latestportfoliooption.js"></script>
   </body>
 </html>
