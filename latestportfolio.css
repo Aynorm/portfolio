@@ -265,6 +265,8 @@
 
 .top-ul {
   display: flex;
+  background-color: black;
+  border-radius: 14px;
 }
 
 .top-li {
@@ -683,7 +685,7 @@ img {
 }
 
 .glass-background {
-  background-color: hsla(0, 0%, 100%, 0.1);
+  background-color: hsla(0, 0%, 100%, 0.05);
   border-radius: 20px;
   border: 1px solid hsl(0, 0%, 50%, 0.3);
   /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.952); */
@@ -725,12 +727,12 @@ img {
 }
 
 .snippet-div {
-  background-color: hsl(0, 0%, 100%, 0.2);
+  background-color: hsl(0, 0%, 100%, 0.05);
   padding: 0px 0px 40px 0px;
   border-radius: 20px;
   width: 100%;
   height: 100%;
-  border: 1px solid hsl(0, 0%, 50%, 0.2);
+  border: 1px solid hsl(0, 0%, 50%, 0.5);
 }
 
 .snippet-div:hover,
@@ -758,7 +760,7 @@ img {
 
 .paragraph-snippet {
   font-size: 18px;
-  font-weight: 100;
+  font-weight: 500;
 }
 
 .h3-snippet {

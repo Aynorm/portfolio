@@ -3,63 +3,187 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Voting Dashboard</title>
     <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f6fa;
+        margin: 0;
+        padding: 0;
+      }
+
       .container {
-        position: relative;
-        width: 50%;
+        max-width: 450px;
+        margin: 60px auto;
+        background: #fff;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
 
-      .first-image {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-
-      .second-image {
-        display: block;
-        width: 100%;
-        height: auto;
-      }
-
-      .foverlay {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        width: 100%;
-        opacity: 0;
-        transition: 0.5s ease;
-        background-color: red;
-      }
-
-      .container:hover .foverlay {
-        opacity: 1;
-      }
-
-      .second-image-div {
-        top: 50%;
-        left: 50%;
-        position: absolute;
-        -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
+      h2 {
         text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .candidate {
+        background: #f1f1f1;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      button {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background: #3498db;
+        color: white;
+        font-size: 14px;
+      }
+
+      button:hover {
+        background: #2c82c9;
+      }
+
+      #paymentModal,
+      #voteModal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .modal-box {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        width: 350px;
+        text-align: center;
+      }
+
+      input {
+        width: 90%;
+        padding: 10px;
+        margin-bottom: 12px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
       }
     </style>
   </head>
   <body>
-    <h2>Fade in overlay</h2>
-    <p>Hover over the image to see the effets</p>
     <div class="container">
-      <img class="first-image" src="Photoshop_CC_icon.png" alt="front" />
-      <div class="foverlay">
-        <div class="second-image-div">
-          <img class="second-image" src="JavaScript_logo.png" alt="back" />
-        </div>
+      <h2>Voting Dashboard</h2>
+
+      <div style="display: grid" class="candidate">
+        <h2>ADEOLA MARIAM</h2>
+        <span
+          ><img style="width: 100%" src="real estate logo.jpg" alt=""
+        /></span>
+        <button onclick="promptVote('ADEOLA MARIAM')">Vote</button>
+      </div>
+
+      <!-- <div class="candidate">
+        <span>Candidate B</span>
+        <button onclick="promptVote('Candidate B')">Vote</button>
+      </div>
+
+      <div class="candidate">
+        <span>Candidate C</span>
+        <button onclick="promptVote('Candidate C')">Vote</button>
+      </div>
+
+      <div class="candidate">
+        <span>Candidate D</span>
+        <button onclick="promptVote('Candidate D')">Vote</button>
+      </div>
+
+      <div class="candidate">
+        <span>TALEEB AYOBAMI</span>
+        <button onclick="promptVote('Taleeb Ayobami')">Vote</button>
+      </div> -->
+    </div>
+
+    <!-- Vote Confirmation Modal -->
+    <div id="voteModal">
+      <div class="modal-box">
+        <h3 id="voteText"></h3>
+        <button onclick="openPayment()">Proceed to Payment</button>
+        <br /><br />
+        <button onclick="closeVote()" style="background: #888">Cancel</button>
       </div>
     </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal">
+      <div class="modal-box">
+        <h3>Payment Required</h3>
+        <p>Voting requires a ₦100 payment.</p>
+
+        <input type="text" placeholder="Enter your name" required />
+        <input
+          type="number"
+          maxlength="2"
+          placeholder="Phone number"
+          required
+        />
+
+        <button onclick="completePayment()">Pay Now</button>
+        <br /><br />
+        <button onclick="closePayment()" style="background: #888">
+          Cancel
+        </button>
+      </div>
+    </div>
+
+    <script>
+      let selectedCandidate = null;
+
+      function promptVote(name) {
+        selectedCandidate = name;
+        document.getElementById(
+          "voteText"
+        ).innerText = `You are voting for ${name}`;
+        document.getElementById("voteModal").style.display = "flex";
+      }
+
+      function closeVote() {
+        document.getElementById("voteModal").style.display = "none";
+      }
+
+      function openPayment() {
+        document.getElementById("voteModal").style.display = "none";
+        document.getElementById("paymentModal").style.display = "flex";
+      }
+
+      function closePayment() {
+        document.getElementById("paymentModal").style.display = "none";
+      }
+
+      function completePayment() {
+        alert(
+          `Payment successful! Your vote for ${selectedCandidate} has been recorded.`
+        );
+        document.getElementById("paymentModal").style.display = "none";
+      }
+    </script>
+
+    <!--Practice-->
+
+    <script>
+      function openPayment() {
+        document.getElementById("myVote2").style.display = "none";
+        document.getElementById("moverlay").style.display = "flex";
+      }
+    </script>
   </body>
 </html>
