@@ -3,187 +3,92 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Voting Dashboard</title>
+    <link rel="stylesheet" href="latestportfolio.css" />
+    <title>Document</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background: #f5f6fa;
-        margin: 0;
-        padding: 0;
+      .pulse-text {
+        background: linear-gradient(90deg, #ded8e2, #e70651, #ec5f0d);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine 3s linear infinite;
       }
 
-      .container {
-        max-width: 450px;
-        margin: 60px auto;
-        background: #fff;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      @keyframes shine {
+        to {
+          background-position: 200% center;
+        }
       }
-
-      h2 {
+      .section {
+        padding: 5px;
+      }
+      .prof {
         text-align: center;
-        margin-bottom: 20px;
       }
-
-      .candidate {
-        background: #f1f1f1;
-        padding: 15px;
-        margin-bottom: 10px;
-        border-radius: 8px;
+      .what-offer {
+        text-align: center;
+      }
+      .offer-div {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        column-gap: 10px;
       }
-
-      button {
-        padding: 10px 18px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        background: #3498db;
-        color: white;
-        font-size: 14px;
-      }
-
-      button:hover {
-        background: #2c82c9;
-      }
-
-      #paymentModal,
-      #voteModal {
-        position: fixed;
-        top: 0;
-        left: 0;
+      .offer-img {
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-        display: none;
-        justify-content: center;
-        align-items: center;
+        border-radius: 5px;
+        border: 1px solid hsl(0, 0%, 50%, 0.5);
       }
-
-      .modal-box {
-        background: white;
-        padding: 25px;
-        border-radius: 10px;
-        width: 350px;
+      .video-clip {
         text-align: center;
-      }
-
-      input {
-        width: 90%;
-        padding: 10px;
-        margin-bottom: 12px;
-        border-radius: 6px;
-        border: 1px solid #ccc;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <h2>Voting Dashboard</h2>
-
-      <div style="display: grid" class="candidate">
-        <h2>ADEOLA MARIAM</h2>
-        <span
-          ><img style="width: 100%" src="real estate logo.jpg" alt=""
-        /></span>
-        <button onclick="promptVote('ADEOLA MARIAM')">Vote</button>
+    <section class="section">
+      <div class="prof">
+        <p>
+          Hi, I’m a professional Website Developer and Graphic Editor. I
+          specialize in building clean, responsive, and user-friendly websites
+          that look great on all devices. Whether you need a brand-new website,
+          a redesign, or fixes to an existing site, I focus on performance,
+          usability, and modern design. In addition to web development, I’m
+          highly skilled in Photoshop and Canva, creating eye-catching graphics,
+          banners, social media designs, thumbnails, and marketing visuals that
+          help brands stand out.
+        </p>
       </div>
 
-      <!-- <div class="candidate">
-        <span>Candidate B</span>
-        <button onclick="promptVote('Candidate B')">Vote</button>
+      <div class="what-offer">
+        What I Offer:
+        <h3 class="pulse-text">1.Custom website design & development</h3>
+        <h3 class="pulse-text">2.Website redesign and bug fixes</h3>
+        <h3 class="pulse-text">3.Mobile-friendly & responsive layouts</h3>
+        <h3 class="pulse-text">
+          4.Photoshop editing (retouching, mockups, banners, thumbnails)
+        </h3>
+        <h3 class="pulse-text">
+          5.Canva designs (social media posts, flyers, presentations, ads)
+        </h3>
+        <h3 class="pulse-text">6.Fast delivery and clear communication</h3>
       </div>
 
-      <div class="candidate">
-        <span>Candidate C</span>
-        <button onclick="promptVote('Candidate C')">Vote</button>
+      <div class="offer-div">
+        <div class="video-clip">
+          <a href="https://aynorm.github.io/portfolio/latestportfolio.html">
+            <img class="offer-img" src="backgroundlaptop.png" alt="web" />WEB
+            DEVELOPMENT</a
+          >
+        </div>
+        <div class="video-clip">
+          <a href="https://aynorm.github.io/portfolio/portfolio">
+            <img
+              class="offer-img"
+              src="backgroundlaptopwhite.png"
+              alt="canva"
+            />CANVA/PHOTO EDITING</a
+          >
+        </div>
       </div>
-
-      <div class="candidate">
-        <span>Candidate D</span>
-        <button onclick="promptVote('Candidate D')">Vote</button>
-      </div>
-
-      <div class="candidate">
-        <span>TALEEB AYOBAMI</span>
-        <button onclick="promptVote('Taleeb Ayobami')">Vote</button>
-      </div> -->
-    </div>
-
-    <!-- Vote Confirmation Modal -->
-    <div id="voteModal">
-      <div class="modal-box">
-        <h3 id="voteText"></h3>
-        <button onclick="openPayment()">Proceed to Payment</button>
-        <br /><br />
-        <button onclick="closeVote()" style="background: #888">Cancel</button>
-      </div>
-    </div>
-
-    <!-- Payment Modal -->
-    <div id="paymentModal">
-      <div class="modal-box">
-        <h3>Payment Required</h3>
-        <p>Voting requires a ₦100 payment.</p>
-
-        <input type="text" placeholder="Enter your name" required />
-        <input
-          type="number"
-          maxlength="2"
-          placeholder="Phone number"
-          required
-        />
-
-        <button onclick="completePayment()">Pay Now</button>
-        <br /><br />
-        <button onclick="closePayment()" style="background: #888">
-          Cancel
-        </button>
-      </div>
-    </div>
-
-    <script>
-      let selectedCandidate = null;
-
-      function promptVote(name) {
-        selectedCandidate = name;
-        document.getElementById(
-          "voteText"
-        ).innerText = `You are voting for ${name}`;
-        document.getElementById("voteModal").style.display = "flex";
-      }
-
-      function closeVote() {
-        document.getElementById("voteModal").style.display = "none";
-      }
-
-      function openPayment() {
-        document.getElementById("voteModal").style.display = "none";
-        document.getElementById("paymentModal").style.display = "flex";
-      }
-
-      function closePayment() {
-        document.getElementById("paymentModal").style.display = "none";
-      }
-
-      function completePayment() {
-        alert(
-          `Payment successful! Your vote for ${selectedCandidate} has been recorded.`
-        );
-        document.getElementById("paymentModal").style.display = "none";
-      }
-    </script>
-
-    <!--Practice-->
-
-    <script>
-      function openPayment() {
-        document.getElementById("myVote2").style.display = "none";
-        document.getElementById("moverlay").style.display = "flex";
-      }
-    </script>
+    </section>
   </body>
 </html>
