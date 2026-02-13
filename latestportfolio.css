@@ -25,6 +25,10 @@
     align-items: center;
     justify-content: center;
   }
+
+  .offer-div {
+    flex-wrap: wrap !important;
+  }
   .a-color-alt {
     color: white !important;
   }
