@@ -41,11 +41,11 @@ document.getElementById("navTop").innerHTML = navTop;
 export const bottomNav =
   "<div class='mobile top-glass-background'>\
   <ul class='ul-bottom'>\
-  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/latestportfolio.html'><p class='p-bottom'>Home</p> <img class='bottom-img' src='home btn.png' alt='home'> </a> </li>\
-  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/about'><p class='p-bottom'>About</p><img class='bottom-img' src='about btn.png' alt='about'> </a> </li>\
-  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/portfolio'><p class='p-bottom'>Portfolio</p><img class='bottom-img' src='portfolio btn.png' alt='portfolio'> </a> </li>\
-  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/contact'><p class='p-bottom'>Contact</p> <img class='bottom-img' src='blog btn.png' alt='blog'> </a> </li>\
-  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/hire-me'><p class='p-bottom'>Services</p><img class='bottom-img' src='services btn.png' alt='services'></a> </li>\
+  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/latestportfolio.html'><img class='bottom-img' src='home btn.png' alt='home'><p class='p-bottom'>Home</p> </a> </li>\
+  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/about'><img class='bottom-img' src='about btn.png' alt='about'> </a> <p class='p-bottom'>About</p></li>\
+  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/portfolio'><img class='bottom-img' src='portfolio btn.png' alt='portfolio'> </a><p class='p-bottom'>Portfolio</p> </li>\
+  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/contact'> <img class='bottom-img' src='blog btn.png' alt='blog'> </a><p class='p-bottom'>Contact</p> </li>\
+  <li class='bottom-btn'> <a href='https://aynorm.github.io/portfolio/hire-me'><img class='bottom-img' src='services btn.png' alt='services'></a> <p class='p-bottom'>Services</p></li>\
   </ul>\
   </div>\
 ";

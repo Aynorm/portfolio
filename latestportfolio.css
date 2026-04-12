@@ -17,8 +17,17 @@
     background-repeat: no-repeat; */
     background-color: #11181c;
     color: white;
-    font-family: Spacegrotesk, system-ui, -apple-system, BlinkMacSystemFont,
-      "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    font-family:
+      Spacegrotesk,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
       "Helvetica Neue";
     font-size: 18px;
     font-weight: 400;
@@ -111,7 +120,7 @@
   .mobile {
     display: grid !important;
     position: fixed !important;
-    bottom: -10px !important;
+    bottom: -1px !important;
     padding-bottom: 20px !important;
     padding-top: -10px !important;
     width: 100% !important;
@@ -222,8 +231,10 @@
 .mobile {
   display: none;
   background-color: black;
-  border-top: 1px solid gray;
-  padding: 4px 0px 60px 0px !important;
+  border: 1px solid gray;
+  border-radius: 50px !important;
+
+  /* padding: 4px 0px 60px 0px !important; */
 }
 
 .hire-me-div {
@@ -394,8 +405,18 @@ body {
   background: #11181c;
 
   color: white;
-  font-family: Spacegrotesk, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue";
+  font-family:
+    Spacegrotesk,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue";
   font-size: 18px;
   font-weight: 400;
   align-items: center;
