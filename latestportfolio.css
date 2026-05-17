@@ -400,7 +400,7 @@
 }
 
 body {
-  background-image: url(faded_gallery-OfdOEdGYiuk-unsplash.jpg) !important;
+  /* background-image: url(faded_gallery-OfdOEdGYiuk-unsplash.jpg) !important; */
   background-attachment: fixed;
   background: #11181c;
 
@@ -1013,7 +1013,7 @@ img {
 .lightTheme {
   color: black !important;
   background-color: whitesmoke;
-  background-image: url(faded_gallery-OfdOEdGYiuk-unsplashwhite.png) !important;
+  /* background-image: url(faded_gallery-OfdOEdGYiuk-unsplashwhite.png) !important; */
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
